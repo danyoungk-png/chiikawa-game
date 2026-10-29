@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>치이카와 커리어 & 케어 센터 | 나의 노동 적성과 힐링 라운지</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Jua & Gowun Dodum for ultra-cute Korean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FFFDF9',
+            pinky: '#FFE5EC',
+            pinkyDark: '#FFB3C6',
+            pinkyAccent: '#FF6B8B',
+            sky: '#E2F0FE',
+            skyDark: '#A8D5BA',
+            skyAccent: '#5AA9E6',
+            lemon: '#FFF3B0',
+            lemonAccent: '#F4A261',
+            choco: '#5C4B51',
+            chocoLight: '#8E7980'
+          },
+          fontFamily: {
+            title: ['"Jua"', 'sans-serif'],
+            body: ['"Gowun Dodum"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #FFFDF9;
+      background-image: 
+        radial-gradient(#FFE5EC 2px, transparent 2px), 
+        radial-gradient(#FFF3B0 2px, #FFFDF9 2px);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      color: #5C4B51;
+      font-family: 'Gowun Dodum', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-cute {
+      font-family: 'Jua', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    /* Cute hand-drawn style border */
+    .kawaii-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 3px solid #5C4B51;
+      border-radius: 28px;
+      box-shadow: 0 8px 0 #5C4B51, 0 12px 24px rgba(92, 75, 81, 0.12);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .kawaii-card-soft {
+      background: #FFFFFF;
+      border: 2.5px solid #5C4B51;
+      border-radius: 22px;
+      box-shadow: 0 5px 0 #5C4B51;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .kawaii-btn {
+      border: 2.5px solid #5C4B51;
+      border-radius: 9999px;
+      box-shadow: 0 4px 0 #5C4B51;
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+    }
+    .kawaii-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #5C4B51;
+    }
+    .kawaii-btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #5C4B51;
+    }
+
+    .option-btn {
+      background: #FFFDF9;
+      border: 2.5px solid #5C4B51;
+      border-radius: 20px;
+      box-shadow: 0 4px 0 #5C4B51;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .option-btn:hover {
+      background: #FFE5EC;
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 7px 0 #5C4B51;
+    }
+    .option-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #5C4B51;
+    }
+
+    /* Keyframe Animations for Chiikawa Characters */
+    @keyframes bounce-cute {
+      0%, 100% { transform: translateY(0px) scale(1, 1); }
+      50% { transform: translateY(-8px) scale(0.98, 1.03); }
+    }
+
+    @keyframes wiggle-cute {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+
+    @keyframes tremble-cute {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(-2px, 1px) rotate(-1deg); }
+      50% { transform: translate(2px, -1px) rotate(1deg); }
+      75% { transform: translate(-2px, -1px) rotate(0deg); }
+    }
+
+    @keyframes ear-flap-left {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-10deg); }
+    }
+
+    @keyframes ear-flap-right {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(10deg); }
+    }
+
+    @keyframes float-up {
+      0% { opacity: 1; transform: translateY(0) scale(0.8) rotate(0deg); }
+      100% { opacity: 0; transform: translateY(-65px) scale(1.3) rotate(12deg); }
+    }
+
+    @keyframes sparkle-spin {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+      50% { transform: scale(1.25) rotate(20deg); opacity: 1; }
+    }
+
+    @keyframes walk-step {
+      0%, 100% { transform: translateY(0) rotate(-4deg); }
+      50% { transform: translateY(-5px) rotate(4deg); }
+    }
+
+    .anim-bounce { animation: bounce-cute 2.2s infinite ease-in-out; }
+    .anim-wiggle { animation: wiggle-cute 2.6s infinite ease-in-out; }
+    .anim-tremble { animation: tremble-cute 0.4s infinite ease-in-out; }
+    .anim-walk { animation: walk-step 0.6s infinite ease-in-out; }
+    .anim-sparkle { animation: sparkle-spin 2s infinite ease-in-out; }
+    .ear-l { transform-origin: 35% 30%; animation: ear-flap-left 1.8s infinite ease-in-out; }
+    .ear-r { transform-origin: 65% 30%; animation: ear-flap-right 1.8s infinite ease-in-out; }
+
+    .floating-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 100;
+      animation: float-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #FFFDF9; }
+    ::-webkit-scrollbar-thumb {
+      background: #FFB3C6;
+      border-radius: 9999px;
+      border: 2px solid #5C4B51;
+    }
+
+    /* Speech Bubble Tail */
+    .speech-bubble {
+      position: relative;
+      background: #FFFFFF;
+      border: 2.5px solid #5C4B51;
+      border-radius: 20px;
+      box-shadow: 0 4px 0 rgba(92, 75, 81, 0.15);
+    }
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 12px 10px 0;
+      border-style: solid;
+      border-color: #5C4B51 transparent;
+      display: block;
+      width: 0;
+    }
+    .speech-bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 10px 8px 0;
+      border-style: solid;
+      border-color: #FFFFFF transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between relative">
+
+  <!-- Background Floating Cute Clouds & Flowers -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-60">
+    <div class="absolute top-12 left-6 anim-sparkle text-2xl">🌸</div>
+    <div class="absolute top-28 right-8 anim-bounce text-2xl" style="animation-delay: 0.5s;">✨</div>
+    <div class="absolute bottom-24 left-10 anim-wiggle text-2xl" style="animation-delay: 1s;">🍀</div>
+    <div class="absolute bottom-16 right-12 anim-sparkle text-2xl" style="animation-delay: 0.8s;">🌼</div>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-cream/90 border-b-2 border-choco px-4 py-3">
+    <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <!-- Brand Title -->
+      <button onclick="switchMode('home')" class="flex items-center gap-2.5 text-left group focus:outline-none">
+        <div class="w-10 h-10 rounded-full bg-pinky border-2 border-choco flex items-center justify-center shadow-[0_2px_0_#5C4B51] group-hover:scale-110 transition-transform">
+          <span class="text-xl">🌱</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-cute text-lg sm:text-xl text-choco tracking-tight">치이카와 커리어 & 케어</span>
+            <span class="text-xs bg-lemon border border-choco px-2 py-0.5 rounded-full font-cute">V2.0</span>
+          </div>
+          <p class="text-xs text-chocoLight hidden sm:block">우당탕탕 작고 귀여운 노동 적성 검사 & 멘탈 힐링소</p>
+        </div>
+      </button>
+
+      <!-- Mode Switcher & Utilities -->
+      <div class="flex items-center gap-2">
+        <nav class="flex bg-white p-1 rounded-full border-2 border-choco shadow-[0_2px_0_#5C4B51]">
+          <button id="nav-career" onclick="switchMode('career')" class="px-3 py-1 rounded-full text-xs sm:text-sm font-cute transition-all bg-pinky text-choco border border-choco">
+            📝 적성 테스트
+          </button>
+          <button id="nav-care" onclick="switchMode('care')" class="px-3 py-1 rounded-full text-xs sm:text-sm font-cute transition-all text-choco hover:bg-lemon/50">
+            💖 힐링 케어소
+          </button>
+          <button id="nav-dex" onclick="openDexModal()" class="px-3 py-1 rounded-full text-xs sm:text-sm font-cute transition-all text-choco hover:bg-sky/50">
+            📖 도감
+          </button>
+        </nav>
+
+        <!-- Points Badge -->
+        <div onclick="switchMode('care')" title="나의 노동 보수 포인트" class="cursor-pointer hidden sm:flex items-center gap-1 bg-lemon px-3 py-1.5 rounded-full border-2 border-choco shadow-[0_2px_0_#5C4B51] hover:scale-105 transition-transform">
+          <span class="text-sm">💰</span>
+          <span id="header-points" class="font-cute text-xs text-choco">100 P</span>
+        </div>
+
+        <!-- Sound Toggle Button -->
+        <button id="sound-btn" onclick="toggleSound()" aria-label="효과음 켜기/끄기" class="kawaii-btn bg-sky w-9 h-9 flex items-center justify-center text-base" title="귀여운 8비트 효과음 ON/OFF">
+          🔊
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-grow z-10 px-4 py-6 sm:py-10 max-w-4xl w-full mx-auto">
+
+    <!-- ==========================================
+         MODE 1: CAREER & WORK STYLE TEST
+    =========================================== -->
+    <section id="section-career" class="space-y-6">
+
+      <!-- 1-A. INTRO LANDING VIEW -->
+      <div id="career-intro" class="kawaii-card p-6 sm:p-10 text-center relative overflow-hidden">
+        <!-- Decorative Top Banner -->
+        <div class="inline-flex items-center gap-2 bg-lemon border-2 border-choco px-4 py-1 rounded-full text-xs sm:text-sm font-cute mb-4 shadow-[0_2px_0_#5C4B51]">
+          <span>✨ 제초 5급부터 라멘 장인까지!</span>
+        </div>
+
+        <h1 class="text-2xl sm:text-4xl font-cute text-choco leading-snug mb-3">
+          나와 찰떡인 <span class="text-pinkyAccent underline decoration-wavy decoration-pinkyDark">치이카와 노동 스타일</span>은?
+        </h1>
+        <p class="text-sm sm:text-base text-chocoLight max-w-xl mx-auto mb-6 leading-relaxed">
+          치이카와 세계관에 떨어진 당신! 오늘의 제초 알바부터 위기일발 토벌 작전까지,<br class="hidden sm:inline">
+          12가지 질문으로 알아보는 나의 <strong>진짜 업무 강점, 추천 직무, 그리고 맞춤 멘탈 케어 처방전!</strong>
+        </p>
+
+        <!-- Animated Trio Hero Stage -->
+        <div class="relative bg-gradient-to-b from-sky/60 via-cream to-pinky/40 border-2 border-choco rounded-3xl p-5 sm:p-7 mb-7 max-w-2xl mx-auto shadow-inner">
+          <!-- Interactive Speech Bubble Above Characters -->
+          <div id="intro-speech" class="speech-bubble max-w-md mx-auto px-4 py-2.5 mb-5 text-xs sm:text-sm font-cute text-choco">
+            "캐릭터를 콕! 눌러보면 귀여운 응원 인사를 건네줄 거예요! 💬"
+          </div>
+
+          <!-- 3 Main SVG Characters Trio -->
+          <div class="grid grid-cols-3 gap-2 sm:gap-6 items-end justify-items-center pt-2">
+            <!-- Hachiware -->
+            <div onclick="pokeHeroCharacter('hachiware', event)" class="cursor-pointer group flex flex-col items-center">
+              <div class="w-24 h-24 sm:w-32 sm:h-32 anim-bounce group-hover:scale-110 transition-transform" style="animation-delay: 0.2s;" id="hero-svg-hachiware"></div>
+              <span class="mt-2 bg-sky border border-choco px-2.5 py-0.5 rounded-full text-xs font-cute shadow-sm">하치와레</span>
+            </div>
+
+            <!-- Chiikawa -->
+            <div onclick="pokeHeroCharacter('chiikawa', event)" class="cursor-pointer group flex flex-col items-center">
+              <div class="w-26 h-26 sm:w-36 sm:h-36 anim-bounce group-hover:scale-110 transition-transform" id="hero-svg-chiikawa"></div>
+              <span class="mt-2 bg-pinky border border-choco px-3 py-0.5 rounded-full text-xs font-cute shadow-sm">치이카와</span>
+            </div>
+
+            <!-- Usagi -->
+            <div onclick="pokeHeroCharacter('usagi', event)" class="cursor-pointer group flex flex-col items-center">
+              <div class="w-24 h-24 sm:w-32 sm:h-32 anim-bounce group-hover:scale-110 transition-transform" style="animation-delay: 0.4s;" id="hero-svg-usagi"></div>
+              <span class="mt-2 bg-lemon border border-choco px-2.5 py-0.5 rounded-full text-xs font-cute shadow-sm">우사기</span>
+            </div>
+          </div>
+
+          <p class="text-[11px] text-chocoLight mt-4">💡 팁: 치이카와·하치와레·우사기를 클릭해 쓰담쓰담 해보세요!</p>
+        </div>
+
+        <!-- Feature Badges -->
+        <div class="grid grid-cols-3 gap-2.5 max-w-lg mx-auto mb-7 text-xs sm:text-sm">
+          <div class="bg-cream border-2 border-choco rounded-2xl p-2.5 shadow-[0_3px_0_#5C4B51]">
+            <div class="text-lg mb-0.5">📊</div>
+            <div class="font-cute text-choco">5대 업무 스탯</div>
+            <div class="text-[11px] text-chocoLight">추진력·공감력 분석</div>
+          </div>
+          <div class="bg-cream border-2 border-choco rounded-2xl p-2.5 shadow-[0_3px_0_#5C4B51]">
+            <div class="text-lg mb-0.5">🤝</div>
+            <div class="font-cute text-choco">환상의 동료 궁합</div>
+            <div class="text-[11px] text-chocoLight">최고 & 주의 파트너</div>
+          </div>
+          <div class="bg-cream border-2 border-choco rounded-2xl p-2.5 shadow-[0_3px_0_#5C4B51]">
+            <div class="text-lg mb-0.5">🍵</div>
+            <div class="font-cute text-choco">힐링 처방전</div>
+            <div class="text-[11px] text-chocoLight">맞춤 멘탈 케어 루틴</div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <button onclick="startQuiz()" class="kawaii-btn bg-pinkyAccent text-white font-cute text-lg sm:text-xl px-8 py-4 w-full sm:w-auto flex items-center justify-center gap-2">
+            <span>🚀 노동 적성 테스트 시작하기</span>
+          </button>
+          <button onclick="switchMode('care')" class="kawaii-btn bg-lemon text-choco font-cute text-base px-6 py-4 w-full sm:w-auto flex items-center justify-center gap-2">
+            <span>🌿 먼저 힐링 케어소 가기</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 1-B. QUIZ VIEW -->
+      <div id="career-quiz" class="hidden kawaii-card p-5 sm:p-8 relative">
+        <!-- Top Bar: Back Button & Step Counter -->
+        <div class="flex items-center justify-between mb-4">
+          <button id="btn-prev-q" onclick="prevQuestion()" class="kawaii-btn bg-white px-3.5 py-1.5 text-xs sm:text-sm font-cute flex items-center gap-1 text-choco">
+            <span>⬅️ 이전 질문으로</span>
+          </button>
+          <div class="flex items-center gap-2">
+            <span id="quiz-category-badge" class="bg-sky border border-choco px-3 py-1 rounded-full text-xs font-cute">제초 알바 편</span>
+            <span id="quiz-step-text" class="font-cute text-sm sm:text-base text-pinkyAccent">1 / 12</span>
+          </div>
+        </div>
+
+        <!-- Walking Character Progress Bar -->
+        <div class="mb-6">
+          <div class="relative h-8 bg-cream border-2 border-choco rounded-full overflow-visible p-1 shadow-inner">
+            <div id="quiz-progress-fill" class="h-full bg-gradient-to-r from-pinkyDark to-pinkyAccent rounded-full transition-all duration-300" style="width: 8%;"></div>
+            <!-- Walking Mini Character Indicator -->
+            <div id="quiz-walker" class="absolute -top-3 transition-all duration-300 anim-walk text-2xl select-none" style="left: calc(8% - 14px);">
+              🐹
+            </div>
+            <!-- Goal Flag -->
+            <div class="absolute right-2 top-0.5 text-sm font-cute flex items-center gap-0.5">
+              <span>🚩</span><span class="text-[10px] hidden sm:inline">보수지급!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Reaction Stage during Question -->
+        <div class="bg-gradient-to-b from-lemon/40 to-cream border-2 border-choco rounded-3xl p-4 sm:p-5 mb-6 flex flex-col sm:flex-row items-center gap-4">
+          <div id="quiz-stage-svg" class="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 anim-bounce"></div>
+          <div class="text-center sm:text-left flex-1">
+            <div id="quiz-reaction-bubble" class="inline-block bg-white border-2 border-choco rounded-2xl px-3.5 py-1.5 text-xs font-cute text-pinkyAccent mb-2 shadow-sm">
+              "음... 나 같으면 어떻게 할까?"
+            </div>
+            <h2 id="quiz-question-title" class="text-lg sm:text-2xl font-cute text-choco leading-snug">
+              질문 텍스트가 여기에 표시됩니다.
+            </h2>
+          </div>
+        </div>
+
+        <!-- Answer Options -->
+        <div id="quiz-options" class="space-y-3.5">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- 1-C. RESULT REPORT VIEW -->
+      <div id="career-result" class="hidden space-y-6">
+        <div class="kawaii-card p-6 sm:p-9 relative overflow-hidden">
+          <!-- Top Ribbon -->
+          <div class="text-center mb-4">
+            <span class="inline-block bg-lemon border-2 border-choco px-4 py-1 rounded-full text-xs sm:text-sm font-cute shadow-[0_2px_0_#5C4B51]">
+              🎉 치이카와 커리어 진단 완료! (+50 노동 포인트 지급!)
+            </span>
+          </div>
+
+          <!-- Persona Header & Character Showcase -->
+          <div class="bg-gradient-to-b from-pinky/50 via-cream to-sky/40 border-2 border-choco rounded-3xl p-6 text-center relative mb-6">
+            <div id="result-badge-code" class="inline-block bg-white border-2 border-choco px-3 py-0.5 rounded-full text-xs font-cute text-choco mb-2">
+              유형 타이틀
+            </div>
+            <h2 id="result-title" class="text-2xl sm:text-4xl font-cute text-choco mb-1">
+              캐릭터 이름
+            </h2>
+            <p id="result-subtitle" class="text-sm sm:text-base text-pinkyAccent font-cute mb-4">
+              한 줄 매력 요약
+            </p>
+
+            <!-- Big Animated Character SVG -->
+            <div id="result-character-svg" onclick="celebrateCharacter(event)" class="w-36 h-36 sm:w-44 sm:h-44 mx-auto anim-bounce cursor-pointer" title="클릭하면 축하 꽃가루가 팡팡!"></div>
+
+            <!-- Character Signature Quote -->
+            <div class="mt-4 max-w-md mx-auto bg-white border-2 border-choco rounded-2xl px-4 py-2.5 shadow-[0_3px_0_#5C4B51]">
+              <p id="result-quote" class="font-cute text-sm sm:text-base text-choco"></p>
+            </div>
+          </div>
+
+          <!-- Detailed Story Description -->
+          <div class="bg-cream border-2 border-choco rounded-2xl p-5 mb-6">
+            <h3 class="font-cute text-lg text-choco mb-2 flex items-center gap-2">
+              <span>📋</span> 나의 업무 & 일상 스타일 분석
+            </h3>
+            <p id="result-desc" class="text-sm sm:text-base text-choco leading-relaxed whitespace-pre-line"></p>
+          </div>
+
+          <!-- Two-Column: 5 Core Stats & Recommended Jobs -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+            <!-- 5 Work Stats Bars -->
+            <div class="kawaii-card-soft p-5">
+              <h3 class="font-cute text-lg text-choco mb-3 flex items-center gap-2">
+                <span>📊</span> 5대 노동 능력치 스탯
+              </h3>
+              <div id="result-stats" class="space-y-3">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+
+            <!-- Real-world & Chiikawa Universe Jobs -->
+            <div class="space-y-4">
+              <div class="kawaii-card-soft p-4 bg-sky/30">
+                <h4 class="font-cute text-base text-choco mb-2 flex items-center gap-1.5">
+                  <span>💼</span> 현실 세계 찰떡 추천 직무
+                </h4>
+                <div id="result-real-jobs" class="flex flex-wrap gap-1.5"></div>
+              </div>
+
+              <div class="kawaii-card-soft p-4 bg-lemon/40">
+                <h4 class="font-cute text-base text-choco mb-2 flex items-center gap-1.5">
+                  <span>🪪</span> 치이카와 세계관 추천 알바 & 자격증
+                </h4>
+                <p id="result-chii-job" class="text-sm text-choco font-bold"></p>
+              </div>
+
+              <div class="kawaii-card-soft p-4 bg-pinky/30">
+                <h4 class="font-cute text-base text-choco mb-1.5 flex items-center gap-1.5">
+                  <span>💡</span> 성장을 위한 한 끗 보완점
+                </h4>
+                <p id="result-weakness" class="text-xs sm:text-sm text-choco leading-relaxed"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Best & Caution Colleague Compatibility -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div id="result-best-match" class="kawaii-card-soft p-4 bg-white flex items-center gap-3.5 cursor-pointer hover:bg-pinky/20">
+              <!-- Populated by JS -->
+            </div>
+            <div id="result-caution-match" class="kawaii-card-soft p-4 bg-white flex items-center gap-3.5 cursor-pointer hover:bg-lemon/20">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Personalized Care Prescription -->
+          <div class="bg-gradient-to-r from-lemon/60 via-cream to-pinky/50 border-2 border-choco rounded-2xl p-5 mb-7 shadow-[0_4px_0_#5C4B51]">
+            <h3 class="font-cute text-lg text-choco mb-2 flex items-center gap-2">
+              <span>🍵</span> 치이카와 케어 센터의 맞춤 힐링 처방전
+            </h3>
+            <p id="result-prescription" class="text-sm sm:text-base text-choco leading-relaxed"></p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <button onclick="copyResultSummary()" class="kawaii-btn bg-pinkyAccent text-white font-cute px-6 py-3.5 text-sm sm:text-base flex items-center gap-2">
+              <span>📋 결과 카드 요약 복사하기</span>
+            </button>
+            <button onclick="openDexModal()" class="kawaii-btn bg-sky text-choco font-cute px-5 py-3.5 text-sm sm:text-base flex items-center gap-2">
+              <span>📖 전체 8종 캐릭터 도감 보기</span>
+            </button>
+            <button onclick="switchMode('care')" class="kawaii-btn bg-lemon text-choco font-cute px-5 py-3.5 text-sm sm:text-base flex items-center gap-2">
+              <span>💖 멘탈 케어 라운지 가기</span>
+            </button>
+            <button onclick="restartQuiz()" class="kawaii-btn bg-white text-choco font-cute px-5 py-3.5 text-sm sm:text-base flex items-center gap-2">
+              <span>🔄 다시 테스트하기</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         MODE 2: DAILY CARE & HEALING LOUNGE
+    =========================================== -->
+    <section id="section-care" class="hidden space-y-6">
+
+      <!-- Care Header Banner -->
+      <div class="kawaii-card p-6 sm:p-8 bg-gradient-to-r from-pinky/60 via-cream to-lemon/50">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <span class="inline-block bg-white border-2 border-choco px-3 py-0.5 rounded-full text-xs font-cute mb-2">
+              🌿 지친 현대인을 위한 치이카와 힐링 케어소
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-cute text-choco">
+              오늘도 열심히 노동한 당신, 수고했어요!
+            </h2>
+            <p class="text-xs sm:text-sm text-chocoLight mt-1">
+              현재 감정 상태를 체크하고, 쓰담쓰담과 미니 제초로 노동 포인트를 모아 책상을 꾸며보세요.
+            </p>
+          </div>
+          <!-- Current Points & Pat Counter -->
+          <div class="bg-white border-2 border-choco rounded-2xl p-3.5 text-center shadow-[0_4px_0_#5C4B51] min-w-[150px]">
+            <div class="text-xs text-chocoLight font-bold">보유 노동 보수</div>
+            <div id="care-points-display" class="text-2xl font-cute text-pinkyAccent my-0.5">100 P</div>
+            <div class="text-[11px] text-choco">쓰담쓰담 횟수: <span id="pat-count" class="font-bold">0</span>회</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-A. Today's Emotion & Stress Check-in -->
+      <div class="kawaii-card p-6">
+        <h3 class="font-cute text-xl text-choco mb-1 flex items-center gap-2">
+          <span>🩺</span> 1. 오늘 나의 피로도 & 감정 상태 체크
+        </h3>
+        <p class="text-xs sm:text-sm text-chocoLight mb-4">지금 내 기분과 가장 비슷한 버튼을 누르면 치이카와 친구들이 즉시 응원 처방을 내려줘요!</p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mb-5">
+          <button onclick="selectMood('burnout', event)" class="kawaii-btn bg-cream hover:bg-pinky p-3 rounded-2xl text-center flex flex-col items-center gap-1">
+            <span class="text-2xl">😭</span>
+            <span class="font-cute text-xs sm:text-sm text-choco">방전 직전 번아웃</span>
+          </button>
+          <button onclick="selectMood('anxious', event)" class="kawaii-btn bg-cream hover:bg-sky p-3 rounded-2xl text-center flex flex-col items-center gap-1">
+            <span class="text-2xl">😰</span>
+            <span class="font-cute text-xs sm:text-sm text-choco">마감·시험 긴장됨</span>
+          </button>
+          <button onclick="selectMood('sleepy', event)" class="kawaii-btn bg-cream hover:bg-lemon p-3 rounded-2xl text-center flex flex-col items-center gap-1">
+            <span class="text-2xl">🥱</span>
+            <span class="font-cute text-xs sm:text-sm text-choco">집에 가고 싶음</span>
+          </button>
+          <button onclick="selectMood('proud', event)" class="kawaii-btn bg-cream hover:bg-pinky p-3 rounded-2xl text-center flex flex-col items-center gap-1">
+            <span class="text-2xl">😤</span>
+            <span class="font-cute text-xs sm:text-sm text-choco">열정 풀충전!</span>
+          </button>
+          <button onclick="selectMood('hungry', event)" class="kawaii-btn bg-cream hover:bg-lemon p-3 rounded-2xl text-center flex flex-col items-center gap-1 col-span-2 sm:col-span-1">
+            <span class="text-2xl">🍜</span>
+            <span class="font-cute text-xs sm:text-sm text-choco">맛있는 게 땡김</span>
+          </button>
+        </div>
+
+        <!-- Mood Response Stage -->
+        <div id="mood-response-box" class="bg-gradient-to-r from-sky/40 via-white to-pinky/40 border-2 border-choco rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center gap-4">
+          <div id="mood-svg" class="w-24 h-24 flex-shrink-0 anim-bounce"></div>
+          <div class="text-center sm:text-left flex-1">
+            <div class="inline-block bg-lemon border border-choco px-2.5 py-0.5 rounded-full text-xs font-cute mb-1" id="mood-char-name">
+              하치와레의 한마디
+            </div>
+            <p id="mood-message" class="font-cute text-base sm:text-lg text-choco mb-1">
+              "오늘 기분이 어때? 위에서 버튼을 눌러 우리에게 이야기해 줘! 어떻게든 될 거야~!"
+            </p>
+            <p id="mood-routine" class="text-xs sm:text-sm text-chocoLight">
+              💡 추천 미니 루틴: 따뜻한 물 한 모금 마시고 어깨를 3번 으쓱여 보세요.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-B. Interactive Petting & Mini Weeding Game Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Left: Petting (쓰담쓰담) & Desk Item Shop -->
+        <div class="kawaii-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-cute text-xl text-choco flex items-center gap-1.5">
+                <span>🫳</span> 2. 쓰담쓰담 & 간식 책상
+              </h3>
+              <span class="text-xs bg-pinky border border-choco px-2.5 py-0.5 rounded-full font-cute">클릭마다 +5P</span>
+            </div>
+            <p class="text-xs text-chocoLight mb-3">캐릭터를 전환하고 머리를 쓰담쓰담 클릭해 보세요!</p>
+
+            <!-- Character Selector Tabs -->
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <button onclick="setPetChar('chiikawa')" id="pet-tab-chiikawa" class="px-2.5 py-1 rounded-full text-xs font-cute border border-choco bg-pinky">치이카와</button>
+              <button onclick="setPetChar('hachiware')" id="pet-tab-hachiware" class="px-2.5 py-1 rounded-full text-xs font-cute border border-choco bg-white">하치와레</button>
+              <button onclick="setPetChar('usagi')" id="pet-tab-usagi" class="px-2.5 py-1 rounded-full text-xs font-cute border border-choco bg-white">우사기</button>
+              <button onclick="setPetChar('kurimanju')" id="pet-tab-kurimanju" class="px-2.5 py-1 rounded-full text-xs font-cute border border-choco bg-white">쿠리만쥬</button>
+              <button onclick="setPetChar('momonga')" id="pet-tab-momonga" class="px-2.5 py-1 rounded-full text-xs font-cute border border-choco bg-white">모몽가</button>
+            </div>
+
+            <!-- Petting Stage -->
+            <div onclick="patActiveChar(event)" class="relative bg-gradient-to-b from-pinky/40 to-cream border-2 border-choco rounded-3xl p-5 text-center cursor-pointer hover:shadow-md transition-all select-none overflow-hidden">
+              <div id="pet-speech" class="speech-bubble inline-block px-4 py-1.5 text-xs sm:text-sm font-cute text-choco mb-3">
+                "응! 쓰담쓰담 해주세요... 에헤헤 🌸"
+              </div>
+              <div id="pet-stage-svg" class="w-32 h-32 mx-auto anim-bounce transition-transform active:scale-95"></div>
+
+              <!-- Unlocked Desk Items Display -->
+              <div id="desk-items-tray" class="mt-3 pt-2 border-t border-dashed border-choco/40 flex items-center justify-center gap-3 min-h-[36px]">
+                <span class="text-xs text-chocoLight">아래에서 간식과 아이템을 선물해 보세요!</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini Reward Shop -->
+          <div class="mt-4">
+            <div class="text-xs font-cute text-choco mb-2">🎁 노동 포인트로 책상 아이템 선물하기:</div>
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="buyDeskItem('ramen', '🍜 차루메라 라멘', 30)" id="shop-ramen" class="kawaii-btn bg-cream hover:bg-lemon px-3 py-2 text-xs font-cute flex items-center justify-between">
+                <span>🍜 차루메라 라멘</span>
+                <span class="bg-white border border-choco px-1.5 rounded-full">30P</span>
+              </button>
+              <button onclick="buyDeskItem('dango', '🍡 삼색 당고', 40)" id="shop-dango" class="kawaii-btn bg-cream hover:bg-pinky px-3 py-2 text-xs font-cute flex items-center justify-between">
+                <span>🍡 삼색 당고</span>
+                <span class="bg-white border border-choco px-1.5 rounded-full">40P</span>
+              </button>
+              <button onclick="buyDeskItem('cert', '🪪 제초 5급 자격증', 60)" id="shop-cert" class="kawaii-btn bg-cream hover:bg-sky px-3 py-2 text-xs font-cute flex items-center justify-between">
+                <span>🪪 제초 자격증</span>
+                <span class="bg-white border border-choco px-1.5 rounded-full">60P</span>
+              </button>
+              <button onclick="buyDeskItem('sasumata', '🔱 핑크 사스마타', 80)" id="shop-sasumata" class="kawaii-btn bg-cream hover:bg-pinky px-3 py-2 text-xs font-cute flex items-center justify-between">
+                <span>🔱 사스마타</span>
+                <span class="bg-white border border-choco px-1.5 rounded-full">80P</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Mini Weeding Field & Career Fortune Cookie -->
+        <div class="space-y-6 flex flex-col justify-between">
+          <!-- Weeding Mini Game -->
+          <div class="kawaii-card p-6">
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-cute text-xl text-choco flex items-center gap-1.5">
+                <span>🌱</span> 3. 스트레스 쏙! 미니 제초 알바
+              </h3>
+              <span class="text-xs bg-lemon border border-choco px-2.5 py-0.5 rounded-full font-cute">잡초마다 +10P</span>
+            </div>
+            <p class="text-xs text-chocoLight mb-3">잡초를 톡톡 뽑아 머릿속 잡념도 함께 날려버리세요! (위험한 풀 조심!)</p>
+
+            <div id="weeding-field" class="grid grid-cols-3 gap-2.5 bg-gradient-to-b from-[#E9F7EF] to-[#D4EFDF] border-2 border-choco rounded-2xl p-4 min-h-[160px] items-center justify-items-center">
+              <!-- Populated by JS -->
+            </div>
+
+            <div class="mt-3 flex items-center justify-between text-xs">
+              <span class="text-chocoLight">뽑은 잡초 수: <strong id="weed-count" class="text-choco">0</strong>개</span>
+              <button onclick="spawnWeeds(true)" class="kawaii-btn bg-white px-3 py-1 font-cute text-xs">
+                🔄 새 풀밭으로 이동
+              </button>
+            </div>
+          </div>
+
+          <!-- Daily Career Fortune Cookie -->
+          <div class="kawaii-card p-6 bg-gradient-to-br from-lemon/50 to-cream">
+            <h3 class="font-cute text-xl text-choco mb-1 flex items-center gap-1.5">
+              <span>🥠</span> 4. 오늘의 커리어 응원 포춘쿠키
+            </h3>
+            <p class="text-xs text-chocoLight mb-3">쿠키를 깨뜨려 오늘의 행운 노동 팁과 럭키 아이템을 확인하세요!</p>
+
+            <div id="fortune-box" onclick="crackFortune(event)" class="kawaii-card-soft p-4 text-center cursor-pointer hover:bg-lemon/30">
+              <div id="fortune-icon" class="text-4xl mb-1 anim-wiggle">🥠</div>
+              <div id="fortune-title" class="font-cute text-sm sm:text-base text-choco">
+                여기를 콕! 눌러 포춘쿠키를 열어보세요
+              </div>
+              <div id="fortune-detail" class="text-xs text-chocoLight mt-1 hidden"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       ALL 8 PERSONAS ENCYCLOPEDIA MODAL
+  =========================================== -->
+  <div id="dex-modal" class="fixed inset-0 z-50 hidden bg-choco/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="kawaii-card max-w-3xl w-full max-h-[88vh] flex flex-col overflow-hidden bg-cream">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 bg-pinky border-b-2 border-choco flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">📖</span>
+          <div>
+            <h3 class="font-cute text-lg sm:text-xl text-choco">치이카와 커리어 페르소나 도감 (전체 8종)</h3>
+            <p class="text-xs text-chocoLight">카드를 클릭하면 해당 캐릭터의 상세 커리어 리포트를 바로 볼 수 있어요!</p>
+          </div>
+        </div>
+        <button onclick="closeDexModal()" class="kawaii-btn bg-white w-9 h-9 flex items-center justify-center font-cute text-base">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div id="dex-grid" class="p-5 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Message Box (No alert() used!) -->
+  <div id="toast-box" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 transform translate-y-4">
+    <div class="bg-choco text-cream border-2 border-white px-5 py-3 rounded-full shadow-lg font-cute text-sm flex items-center gap-2">
+      <span id="toast-icon">✨</span>
+      <span id="toast-text">알림 메시지</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="z-10 border-t-2 border-choco bg-cream/90 py-4 px-4 text-center text-xs text-chocoLight">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p class="font-cute text-choco">🌱 치이카와 커리어 & 케어 센터 (Chiikawa Career & Care Hub)</p>
+      <p>오늘도 작고 소중하게 일하는 모든 분들의 워라밸과 행복을 응원합니다 💕</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       APPLICATION LOGIC & SVG ILLUSTRATIONS
+  =========================================== -->
+  <script>
+    /* -----------------------------------------------------------
+     * 1. WEB AUDIO SYNTHESIZER (Cute 8-Bit Pastel Sound Effects)
+     * ----------------------------------------------------------- */
+    let soundEnabled = true;
+    let audioCtx = null;
+
+    function getAudioCtx() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) audioCtx = new AudioContextClass();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSound(type) {
+      if (!soundEnabled) return;
+      try {
+        const ctx = getAudioCtx();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+
+        if (type === 'pop') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(520, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.09);
+          gain.gain.setValueAtTime(0.14, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.09);
+        } else if (type === 'sparkle') {
+          const notes = [659.25, 783.99, 1046.5];
+          notes.forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + i * 0.055);
+            gain.gain.setValueAtTime(0.12, now + i * 0.055);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.055 + 0.14);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + i * 0.055);
+            osc.stop(now + i * 0.055 + 0.14);
+          });
+        } else if (type === 'fanfare') {
+          const notes = [523.25, 659.25, 783.99, 1046.5];
+          notes.forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + i * 0.09);
+            gain.gain.setValueAtTime(0.15, now + i * 0.09);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.28);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + i * 0.09);
+            osc.stop(now + i * 0.09 + 0.28);
+          });
+        }
+      } catch (e) {
+        // Ignore audio restrictions if not interacted yet
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById('sound-btn');
+      btn.textContent = soundEnabled ? '🔊' : '🔇';
+      if (soundEnabled) {
+        playSound('pop');
+        showToast('귀여운 8비트 효과음이 켜졌어요!', '🎵');
+      } else {
+        showToast('효과음이 조용히 꺼졌어요.', '🔇');
+      }
+    }
+
+    /* -----------------------------------------------------------
+     * 2. CUSTOM HAND-CRAFTED ANIMATED SVG CHARACTERS (8 PERSONAS)
+     * ----------------------------------------------------------- */
+    function getCharacterSVG(charId, mood = 'happy') {
+      const stroke = '#5C4B51';
+      let eyesMarkup = `
+        <circle cx="48" cy="64" r="4.2" fill="${stroke}"/>
+        <circle cx="46.5" cy="62.2" r="1.5" fill="#FFF"/>
+        <circle cx="72" cy="64" r="4.2" fill="${stroke}"/>
+        <circle cx="70.5" cy="62.2" r="1.5" fill="#FFF"/>
+      `;
+      if (mood === 'cheer' || mood === 'proud') {
+        eyesMarkup = `
+          <path d="M43 64 Q48 58 53 64" fill="none" stroke="${stroke}" stroke-width="3" stroke-linecap="round"/>
+          <path d="M67 64 Q72 58 77 64" fill="none" stroke="${stroke}" stroke-width="3" stroke-linecap="round"/>
+        `;
+      } else if (mood === 'teary') {
+        eyesMarkup += `
+          <path d="M43 69 Q45 75 43 78" fill="none" stroke="#5AA9E6" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M77 69 Q75 75 77 78" fill="none" stroke="#5AA9E6" stroke-width="2.5" stroke-linecap="round"/>
+        `;
+      }
+
+      const cheeks = `
+        <ellipse cx="37" cy="70" rx="6" ry="3.5" fill="#FFB3C6" opacity="0.85"/>
+        <ellipse cx="83" cy="70" rx="6" ry="3.5" fill="#FFB3C6" opacity="0.85"/>
+      `;
+
+      switch (charId) {
+        case 'chiikawa':
+          return `
+            <svg viewBox="0 0 120 120" class="w-full h-full overflow-visible">
+              <ellipse cx="60" cy="108" rx="28" ry="6" fill="#5C4B51" opacity="0.12"/>
+              <g class="ear-l"><circle cx="35" cy="34" r="12" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/></g>
+              <g class="ear-r"><circle cx="85" cy="34" r="12" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/></g>
+              <rect x="36" y="75" width="48" height="28" rx="14" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/>
+              <circle cx="60" cy="63" r="32" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/>
+              <!-- Cute little bear pouch -->
+              <path d="M42 84 L78 96" stroke="#FF6B8B" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="75" cy="95" r="6" fill="#FFB3C6" stroke="${stroke}" stroke-width="2"/>
+              ${cheeks}
+              ${eyesMarkup}
+              <path d="M55 71 Q57.5 74 60 71 Q62.5 74 65 71" fill="none" stroke="${stroke}" stroke-width="2.6" stroke-linecap="round"/>
+              <!-- Little paws -->
+              <ellipse cx="34" cy="84" rx="6" ry="4.5" fill="#FFFFFF" stroke="${stroke}" stroke-width="2.8"/>
+              <ellipse cx="86" cy="84" rx="6" ry="4.5" fill="#FFFFFF" stroke="${stroke}" stroke-width="2.8"/>
+              <!-- Floating flower -->
+              <g class="anim-sparkle" style="transform-origin: 98px 25px;">
+                <circle cx="98" cy="25" r="6" fill="#FFB3C6"/>
+                <circle cx="98" cy="25" r="2.5" fill="#FFF3B0"/>
+              </g>
+            </svg>`;
+
+        case 'hachiware':
+          return `
+            <svg viewBox="0 0 120 120" class="w-full h-full overflow-visible">
+              <ellipse cx="60" cy="108" rx="28" ry="6" fill="#5C4B51" opacity="0.12"/>
+              <g class="ear-l">
+                <polygon points="26,44 32,18 49,33" fill="#72B5E8" stroke="${stroke}" stroke-width="3.2" stroke-linejoin="round"/>
+              </g>
+              <g class="ear-r">
+                <polygon points="94,44 88,18 71,33" fill="#72B5E8" stroke="${stroke}" stroke-width="3.2" stroke-linejoin="round"/>
+              </g>
+              <rect x="36" y="75" width="48" height="28" rx="14" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/>
+              <circle cx="60" cy="63" r="32" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/>
+              <!-- Blue Hachiware bangs -->
+              <path d="M29 56 Q36 31 60 31 Q84 31 91 56 Q76 47 60 58 Q44 47 29 56 Z" fill="#72B5E8" stroke="${stroke}" stroke-width="3" stroke-linejoin="round"/>
+              ${cheeks}
+              ${eyesMarkup}
+              <!-- Happy open cat smile & fang -->
+              <path d="M54 71 Q57 74 60 71 Q63 74 66 71" fill="none" stroke="${stroke}" stroke-width="2.6" stroke-linecap="round"/>
+              <polygon points="62,72 64,76 66,72" fill="#FFFFFF" stroke="${stroke}" stroke-width="1.5"/>
+              <!-- Blue Camera strap -->
+              <rect x="52" y="85" width="16" height="12" rx="3" fill="#5AA9E6" stroke="${stroke}" stroke-width="2.2"/>
+              <circle cx="60" cy="91" r="3.2" fill="#FFF" stroke="${stroke}" stroke-width="1.8"/>
+              <text x="92" y="28" font-size="14" class="anim-sparkle">💙</text>
+            </svg>`;
+
+        case 'usagi':
+          return `
+            <svg viewBox="0 0 120 120" class="w-full h-full overflow-visible">
+              <ellipse cx="60" cy="108" rx="28" ry="6" fill="#5C4B51" opacity="0.12"/>
+              <g class="ear-l">
+                <rect x="36" y="6" width="14" height="38" rx="7" fill="#FFF3B0" stroke="${stroke}" stroke-width="3.2"/>
+                <rect x="40" y="12" width="6" height="24" rx="3" fill="#FFB3C6"/>
+              </g>
+              <g class="ear-r">
+                <rect x="70" y="6" width="14" height="38" rx="7" fill="#FFF3B0" stroke="${stroke}" stroke-width="3.2"/>
+                <rect x="74" y="12" width="6" height="24" rx="3" fill="#FFB3C6"/>
+              </g>
+              <rect x="36" y="75" width="48" height="28" rx="14" fill="#FFF3B0" stroke="${stroke}" stroke-width="3.2"/>
+              <circle cx="60" cy="65" r="31" fill="#FFF3B0" stroke="${stroke}" stroke-width="3.2"/>
+              ${cheeks}
+              ${eyesMarkup}
+              <path d="M54 72 Q60 77 66 72" fill="#FF8FA3" stroke="${stroke}" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Usagi's energetic pom-poms / stick -->
+              <circle cx="26" cy="80" r="8" fill="#FFB3C6" stroke="${stroke}" stroke-width="2.5"/>
+              <circle cx="94" cy="80" r="8" fill="#FFB3C6" stroke="${stroke}" stroke-width="2.5"/>
+              <text x="92" y="28" font-size="15" class="anim-sparkle">⚡</text>
+            </svg>`;
+
+        case 'shisa':
+          return `
+            <svg viewBox="0 0 120 120" class="w-full h-full overflow-visible">
+              <ellipse cx="60" cy="108" rx="28" ry="6" fill="#5C4B51" opacity="0.12"/>
+              <!-- Fluffy orange mane/ears -->
+              <circle cx="30" cy="48" r="13" fill="#F4A261" stroke="${stroke}" stroke-width="3"/>
+              <circle cx="90" cy="48" r="13" fill="#F4A261" stroke="${stroke}" stroke-width="3"/>
+              <rect x="36" y="75" width="48" height="28" rx="14" fill="#FFF3B0" stroke="${stroke}" stroke-width="3.2"/>
+              <circle cx="60" cy="63" r="31" fill="#FFF3B0" stroke="${stroke}" stroke-width="3.2"/>
+              <!-- Rou Headband -->
+              <path d="M31 48 Q60 40 89 48" fill="none" stroke="#E63946" stroke-width="5" stroke-linecap="round"/>
+              <!-- Thick passionate eyebrows -->
+              <path d="M40 52 Q48 46 54 53" fill="none" stroke="#E76F51" stroke-width="4" stroke-linecap="round"/>
+              <path d="M80 52 Q72 46 66 53" fill="none" stroke="#E76F51" stroke-width="4" stroke-linecap="round"/>
+              ${cheeks}
+              ${eyesMarkup}
+              <path d="M52 72 Q60 79 68 72 Z" fill="#FF8FA3" stroke="${stroke}" stroke-width="2.4"/>
+              <text x="90" y="26" font-size="16" class="anim-sparkle">🍜</text>
+            </svg>`;
+
+        case 'rakko':
+          return `
+            <svg viewBox="0 0 120 120" class="w-full h-full overflow-visible">
+              <ellipse cx="60" cy="108" rx="28" ry="6" fill="#5C4B51" opacity="0.12"/>
+              <!-- Hero Cape -->
+              <path d="M28 76 L20 105 L100 105 L92 76 Z" fill="#5C4B51" stroke="${stroke}" stroke-width="2.5"/>
+              <circle cx="34" cy="36" r="11" fill="#D4A373" stroke="${stroke}" stroke-width="3.2"/>
+              <circle cx="86" cy="36" r="11" fill="#D4A373" stroke="${stroke}" stroke-width="3.2"/>
+              <rect x="36" y="75" width="48" height="28" rx="14" fill="#D4A373" stroke="${stroke}" stroke-width="3.2"/>
+              <circle cx="60" cy="63" r="31" fill="#D4A373" stroke="${stroke}" stroke-width="3.2"/>
+              <ellipse cx="60" cy="68" rx="22" ry="17" fill="#FAEDCD"/>
+              <!-- Cool scar over right eye -->
+              <line x1="68" y1="50" x2="77" y2="68" stroke="${stroke}" stroke-width="2.5" stroke-linecap="round"/>
+              ${cheeks}
+              ${eyesMarkup}
+              <path d="M55 72 Q60 75 65 72" fill="none" stroke="${stroke}" stroke-width="2.6" stroke-linecap="round"/>
+              <text x="90" y="26" font-size="16" class="anim-sparkle">⚔️</text>
+            </svg>`;
+
+        case 'kurimanju':
+          return `
+            <svg viewBox="0 0 120 120" class="w-full h-full overflow-visible">
+              <ellipse cx="60" cy="108" rx="28" ry="6" fill="#5C4B51" opacity="0.12"/>
+              <circle cx="34" cy="38" r="10" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/>
+              <circle cx="86" cy="38" r="10" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/>
+              <rect x="36" y="75" width="48" height="28" rx="14" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/>
+              <circle cx="60" cy="63" r="31" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/>
+              <!-- Chestnut top head color -->
+              <path d="M29 58 Q33 31 60 31 Q87 31 91 58 Q60 50 29 58 Z" fill="#9C6644" stroke="${stroke}" stroke-width="3"/>
+              ${cheeks}
+              ${eyesMarkup}
+              <!-- "Kyah~" relaxed expression -->
+              <path d="M53 72 Q60 77 67 72" fill="none" stroke="${stroke}" stroke-width="2.5" stroke-linecap="round"/>
+              <text x="88" y="28" font-size="16" class="anim-sparkle">🍵</text>
+            </svg>`;
+
+        case 'momonga':
+          return `
+            <svg viewBox="0 0 120 120" class="w-full h-full overflow-visible">
+              <ellipse cx="60" cy="108" rx="28" ry="6" fill="#5C4B51" opacity="0.12"/>
+              <!-- Fluffy huge tail behind -->
+              <circle cx="92" cy="78" r="20" fill="#E2F0FE" stroke="${stroke}" stroke-width="3"/>
+              <g class="ear-l"><ellipse cx="33" cy="34" rx="12" ry="9" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/></g>
+              <g class="ear-r"><ellipse cx="87" cy="34" rx="12" ry="9" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/></g>
+              <!-- Fluffy cheeks -->
+              <circle cx="60" cy="64" r="33" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/>
+              <rect x="36" y="75" width="48" height="28" rx="14" fill="#FFFFFF" stroke="${stroke}" stroke-width="3.2"/>
+              ${cheeks}
+              ${eyesMarkup}
+              <path d="M56 71 Q60 75 64 71" fill="#FF8FA3" stroke="${stroke}" stroke-width="2.4"/>
+              <text x="90" y="25" font-size="15" class="anim-sparkle">💖</text>
+            </svg>`;
+
+        case 'kani':
+        default:
+          return `
+            <svg viewBox="0 0 120 120" class="w-full h-full overflow-visible">
+              <ellipse cx="60" cy="108" rx="28" ry="6" fill="#5C4B51" opacity="0.12"/>
+              <!-- Cute Crab Headband -->
+              <g class="ear-l">
+                <circle cx="36" cy="24" r="11" fill="#FF8FA3" stroke="${stroke}" stroke-width="3"/>
+                <polygon points="32,14 36,22 40,14" fill="#FFFDF9"/>
+              </g>
+              <g class="ear-r">
+                <circle cx="84" cy="24" r="11" fill="#FF8FA3" stroke="${stroke}" stroke-width="3"/>
+                <polygon points="80,14 84,22 88,14" fill="#FFFDF9"/>
+              </g>
+              <rect x="36" y="75" width="48" height="28" rx="14" fill="#FFE5EC" stroke="${stroke}" stroke-width="3.2"/>
+              <circle cx="60" cy="63" r="31" fill="#FFE5EC" stroke="${stroke}" stroke-width="3.2"/>
+              ${cheeks}
+              ${eyesMarkup}
+              <path d="M55 71 Q60 75 65 71" fill="none" stroke="${stroke}" stroke-width="2.6" stroke-linecap="round"/>
+              <text x="90" y="26" font-size="15" class="anim-sparkle">📚</text>
+            </svg>`;
+      }
+    }
+
+    /* -----------------------------------------------------------
+     * 3. PERSONA DATA (8 DETAILED CHIIKAWA CAREER PERSONAS)
+     * ----------------------------------------------------------- */
+    const PERSONAS = {
+      chiikawa: {
+        id: 'chiikawa',
+        badge: '성실 & 공감형 성장러 (ISFP / INFP)',
+        name: '성실한 제초 5급 도전자 치이카와',
+        subtitle: '작고 여리지만 결정적 순간에 빛나는 외유내강 성장형 인재!',
+        quote: '"응...! 떨리지만 오늘도 포기하지 않고 해볼래!"',
+        desc: '처음 겪는 업무나 낯선 환경 앞에서는 살짝 긴장하고 눈물이 핑 돌 때도 있지만, 맡은 일은 끝까지 해내려는 책임감이 누구보다 강한 스타일이에요.\n\n동료의 작은 배려에도 진심으로 고마워하며, 조용히 꾸준히 실력을 쌓아 어느새 팀에서 가장 신뢰받는 핵심 멤버로 성장합니다.',
+        stats: [
+          { label: '성실·꾸준함', val: 96, color: 'bg-pinkyAccent' },
+          { label: '공감·배려심', val: 98, color: 'bg-skyAccent' },
+          { label: '기획·꼼꼼함', val: 85, color: 'bg-lemonAccent' },
+          { label: '위기 돌파력', val: 82, color: 'bg-pinkyDark' },
+          { label: '워라밸 수호', val: 90, color: 'bg-skyDark' }
+        ],
+        realJobs: ['콘텐츠 디자이너', 'UX 리서처', '사내 컬처 매니저', '일러스트레이터', '교육·케어 전문가'],
+        chiiJob: '🌿 꼼꼼한 제초 5급 정직원 & 포켓몬가 아니라 달콤한 당고 시식단',
+        weakness: '혼자 모든 걱정을 껴안고 끙끙 앓기 쉬워요. 막히는 부분이 생기면 하치와레 같은 동료에게 바로 도움을 요청해 보세요!',
+        bestMatch: 'hachiware',
+        cautionMatch: 'momonga',
+        prescription: '오늘 퇴근길에는 좋아하는 따뜻한 국물 요리나 달콤한 푸딩을 꼭 챙겨 드세요. 작은 성취라도 스스로에게 "오늘도 잘 버텼어!"라고 쓰담쓰담 해주는 시간이 필요합니다.'
+      },
+      hachiware: {
+        id: 'hachiware',
+        badge: '소통 만렙 긍정 메이커 (ENFJ / ESFJ)',
+        name: '소통 만렙 올라운더 PM 하치와레',
+        subtitle: '"어떻게든 될 거야!" 긍정의 힘으로 팀을 하나로 묶는 분위기 메이커',
+        quote: '"난관에 부딪혀도 괜찮아! 우리 함께라면 어떻게든 될 거야~!"',
+        desc: '뛰어난 공감 능력과 언어 감각으로 팀원들 사이의 어색한 기류를 단숨에 녹여버리는 커뮤니케이션 천재예요.\n\n새로운 도구(카메라, 신기술)를 배우는 데에도 호기심이 넘치며, 동료가 힘들어할 때 가장 먼저 다가가 따뜻한 라멘 한 그릇을 건네는 다정한 리더십을 지녔습니다.',
+        stats: [
+          { label: '소통·협업력', val: 99, color: 'bg-skyAccent' },
+          { label: '긍정 회복력', val: 96, color: 'bg-pinkyAccent' },
+          { label: '기획·조율력', val: 92, color: 'bg-lemonAccent' },
+          { label: '위기 대처력', val: 88, color: 'bg-skyDark' },
+          { label: '호기심·학습', val: 94, color: 'bg-pinkyDark' }
+        ],
+        realJobs: ['프로덕트 매니저(PM)', '마케팅 디렉터', 'HR 피플 매니저', '브랜드 에디터', '커뮤니티 빌더'],
+        chiiJob: '📸 제초 5급 유경험자 & 토벌 현장 취재 포토그래퍼',
+        weakness: '주변 사람을 챙기느라 정작 내 에너지가 고갈되는 걸 늦게 알아차릴 때가 있어요. 가끔은 "내 기분 먼저!" 모드를 켜주세요.',
+        bestMatch: 'chiikawa',
+        cautionMatch: 'kurimanju',
+        prescription: '차루메라 라멘에 파를 송송 썰어 넣고 좋아하는 음악을 흥얼거려 보세요. 주말에는 좋아하는 사진첩을 정리하며 나만의 소확행을 충전하세요!'
+      },
+      usagi: {
+        id: 'usagi',
+        badge: '천재적 직관 & 돌파력 (ENTP / ESTP)',
+        name: '천재적 돌파력의 크리에이터 우사기',
+        subtitle: '"우라! 야하~!" 고정관념을 부수는 압도적 센스와 실행력',
+        quote: '"우라!! 야하~!! (해석: 고민할 시간에 이미 해결했음!)"',
+        desc: '남들이 복잡하게 회의할 때 단숨에 핵심을 꿰뚫어 보고 기상천외한 방법으로 문제를 해결해 버리는 천재형 실행가입니다.\n\n두려움이 없고 위기 상황에서도 특유의 유쾌한 텐션으로 현장을 장악하며, 자유로운 환경이 주어졌을 때 200%의 잠재력을 폭발시킵니다.',
+        stats: [
+          { label: '위기 돌파력', val: 99, color: 'bg-lemonAccent' },
+          { label: '창의·아이디어', val: 98, color: 'bg-pinkyAccent' },
+          { label: '순발력·스피드', val: 97, color: 'bg-skyAccent' },
+          { label: '자유분방함', val: 95, color: 'bg-pinkyDark' },
+          { label: '멘탈 강인함', val: 99, color: 'bg-skyDark' }
+        ],
+        realJobs: ['크리에이티브 디렉터', '스타트업 창업가', '그로스 해커', '크리에이터/예능PD', '신사업 개발자'],
+        chiiJob: '💥 제초 3급 엘리트 & 거대 디저트 발굴 탐험가',
+        weakness: '반복적이고 지루한 문서 작업 앞에서는 급격히 흥미를 잃을 수 있어요. 루틴한 업무는 꼼꼼한 동료와 분담하면 무적입니다!',
+        bestMatch: 'kurimanju',
+        cautionMatch: 'shisa',
+        prescription: '답답한 책상 앞을 벗어나 매콤달콤한 맛집 탐방을 떠나거나 신나는 리듬에 맞춰 몸을 흔들어 보세요. 새로운 자극이 곧 당신의 에너지입니다!'
+      },
+      shisa: {
+        id: 'shisa',
+        badge: '열정 & 장인정신 스페셜리스트 (ESTJ / ISTJ)',
+        name: '장인정신 프로페셔널 시사',
+        subtitle: '목표를 정하면 주경야독으로 마스터하는 초일류 성실파!',
+        quote: '"스승님! 오늘도 열심히 배우고 완벽하게 준비했습니다~!"',
+        desc: '한번 목표를 세우면 자격증 공부부터 실무 스킬까지 완벽하게 마스터해야 직성이 풀리는 초열정 노력파입니다.\n\n예의 바르고 성실한 태도로 선배와 동료들의 사랑을 독차지하며, 메뉴얼과 원칙을 탄탄하게 지켜 어떤 프로젝트든 믿고 맡길 수 있는 든든한 기둥입니다.',
+        stats: [
+          { label: '목표 달성력', val: 99, color: 'bg-lemonAccent' },
+          { label: '전문성·학습', val: 97, color: 'bg-pinkyAccent' },
+          { label: '책임감·성실', val: 98, color: 'bg-skyAccent' },
+          { label: '체계·계획성', val: 95, color: 'bg-skyDark' },
+          { label: '예의·신뢰도', val: 96, color: 'bg-pinkyDark' }
+        ],
+        realJobs: ['풀스택 엔지니어', '재무·회계 전문가', '데이터 애널리스트', 'R&D 연구원', '외식·F&B 브랜딩 디렉터'],
+        chiiJob: '🍜 슈퍼 알바생 자격증 보유자 & 라멘 명가 "로우" 수제자',
+        weakness: '스스로에게 너무 엄격해서 휴식 시간에도 공부를 찾곤 해요. 쉬는 것도 다음 도약을 위한 중요한 노동 준비랍니다!',
+        bestMatch: 'rakko',
+        cautionMatch: 'usagi',
+        prescription: '오늘은 자기계발서를 잠시 덮고, 좋아하는 토핑을 잔뜩 올린 특제 라멘과 시원한 음료로 나 자신에게 특급 보너스를 선물하세요!'
+      },
+      rakko: {
+        id: 'rakko',
+        badge: '카리스마 리더 & 반전 매력 (ENTJ / ENFJ)',
+        name: '토벌 랭킹 1위 멘토 랏코 선배',
+        subtitle: '실력은 압도적 1위, 후배에겐 따스하고 파르페엔 진심인 완벽 선배!',
+        quote: '"내 등 뒤로 와라! ...끝나면 달콤한 딸기 파르페 먹으러 가자."',
+        desc: '어려운 과제가 주어질수록 눈빛이 빛나는 실전형 에이스 리더입니다. 뛰어난 실력뿐 아니라 후배들의 성장을 진심으로 챙기는 참된 멘토예요.\n\n일할 때는 누구보다 프로페셔널하지만, 퇴근 후에는 달콤한 디저트 하나에 세상을 다 가진 듯 행복해하는 귀여운 반전 매력을 지녔습니다.',
+        stats: [
+          { label: '리더십·멘토링', val: 99, color: 'bg-skyAccent' },
+          { label: '실무 전투력', val: 99, color: 'bg-pinkyAccent' },
+          { label: '위기 결단력', val: 96, color: 'bg-lemonAccent' },
+          { label: '책임감·의리', val: 97, color: 'bg-skyDark' },
+          { label: '디저트 사랑', val: 100, color: 'bg-pinkyDark' }
+        ],
+        realJobs: ['테크 리드 / CTO', '전략 컨설턴트', '프로젝트 총괄 디렉터', '변호사·전문직 리더', '팀 매니저'],
+        chiiJob: '⚔️ 토벌 랭킹 상위 랭커 & 전설의 디저트 카페 VIP',
+        weakness: '"내가 해결해야 해"라는 책임감 때문에 팀원들에게 약한 모습을 보이는 걸 어색해해요. 가끔은 후배들에게 기대도 괜찮습니다.',
+        bestMatch: 'shisa',
+        cautionMatch: 'momonga',
+        prescription: '무거운 갑옷과 망토를 잠시 내려놓고 생크림과 딸기가 듬뿍 올라간 파르페를 한 입 크게 떠먹어 보세요. 당 충전이 최고의 전략입니다!'
+      },
+      kurimanju: {
+        id: 'kurimanju',
+        badge: '워라밸 미학가 & 여유로운 현자 (ISTP / INTP)',
+        name: '워라밸 미학가 쿠리만쥬 선배',
+        subtitle: '"캬하~!" 일할 땐 깔끔하게, 쉴 땐 누구보다 품격 있게 즐기는 미식가',
+        quote: '"...하아~ (한 모금 마시며 오늘 하루의 피로를 싹 날리는 소리)"',
+        desc: '불필요한 감정 소모나 야근을 싫어하며, 근무 시간 내에 핵심 업무를 군더더기 없이 끝내고 나만의 힐링 타임을 사수하는 스마트 워커입니다.\n\n말수는 적지만 주변 후배들에게 맛있는 안주나 커피를 툭 건네는 속 깊은 정이 있어 모두가 은근히 의지하는 숨은 어른이에요.',
+        stats: [
+          { label: '워라밸 마스터', val: 100, color: 'bg-skyDark' },
+          { label: '업무 효율성', val: 95, color: 'bg-lemonAccent' },
+          { label: '평정심·여유', val: 98, color: 'bg-skyAccent' },
+          { label: '미식·안목', val: 99, color: 'bg-pinkyAccent' },
+          { label: '독립적 해결', val: 93, color: 'bg-pinkyDark' }
+        ],
+        realJobs: ['백엔드 아키텍트', '데이터 사이언티스트', '독립 프리랜서', '미식·라이프스타일 칼럼니스트', '보안 전문가'],
+        chiiJob: '🍶 주류 자격증 보유자 & 퇴근 후 비밀 피크닉 마스터',
+        weakness: '혼자만의 세계가 너무 완벽해서 가끔 팀의 시끌벅적한 잡담 타이밍을 놓칠 수 있어요. 가벼운 티타임에 한 번씩 얼굴을 비춰주세요!',
+        bestMatch: 'usagi',
+        cautionMatch: 'hachiware',
+        prescription: '오늘 저녁엔 좋아하는 잔에 시원한 음료(혹은 하이볼)를 채우고, 노릇하게 구운 간식과 함께 아무 생각 없이 좋아하는 영상을 감상하세요. "캬하~!"'
+      },
+      momonga: {
+        id: 'momonga',
+        badge: '당당한 자기PR & 매력 어필러 (ESFP / ENFP)',
+        name: '당당한 자기PR 스타 모몽가',
+        subtitle: '"칭찬해 줘! 귀여워해 줘!" 원하는 걸 당당히 쟁취하는 솔직 당당 아이콘',
+        quote: '"이봐! 지금 당장 내 귀여움과 성과를 칭찬해 봐라!"',
+        desc: '자신의 매력과 원하는 바를 숨기지 않고 당당하게 표현하는 솔직함의 끝판왕입니다. 남의 눈치를 보느라 에너지를 낭비하지 않아요!\n\n주목받는 무대나 프레젠테이션에서 오히려 빛이 나며, 미워할래야 미워할 수 없는 치명적인 존재감으로 원하는 리소스와 보상을 쟁취해 냅니다.',
+        stats: [
+          { label: '자기PR·발표력', val: 100, color: 'bg-pinkyAccent' },
+          { label: '자존감·당당함', val: 99, color: 'bg-lemonAccent' },
+          { label: '협상·요구력', val: 94, color: 'bg-skyAccent' },
+          { label: '트렌드 감각', val: 95, color: 'bg-pinkyDark' },
+          { label: '스트레스 면역', val: 97, color: 'bg-skyDark' }
+        ],
+        realJobs: ['인플루언서·아티스트', 'PR·홍보 스페셜리스트', '세일즈 네고시에이터', '패션·뷰티 디렉터', '라이브 커머스 호스트'],
+        chiiJob: '💖 귀여움 1급 전담 모델 & 맛있는 주먹밥 시식가',
+        weakness: '내 의견이 앞설 때가 있어 가끔 조용한 동료가 당황할 수 있어요. 동료에게도 "너도 꽤 귀여운데?" 한마디 건네면 인기가 두 배가 됩니다!',
+        bestMatch: 'kani',
+        cautionMatch: 'rakko',
+        prescription: '보들보들한 담요를 덮고 가장 맛있는 디저트를 독차지하며 거울 속 나에게 "오늘도 내가 제일 귀여웠어!"라고 아낌없이 칭찬해 주세요.'
+      },
+      kani: {
+        id: 'kani',
+        badge: '다정한 서포터 & 지식 탐구자 (ISFJ / INFJ)',
+        name: '다정한 헌책방 서포터 카니(고서점)',
+        subtitle: '따뜻한 배려와 깊은 지식으로 동료의 곁을 지켜주는 힐링 파트너',
+        quote: '"같이 책 읽을래? 너와 함께라면 어떤 프로젝트든 즐거워!"',
+        desc: '조용하지만 깊은 통찰력과 따뜻한 마음씨를 가진 외유내강형 서포터입니다. 동료의 개성과 텐션을 있는 그대로 존중해 주는 포용력이 뛰어나요.\n\n새로운 지식을 정리하고 아카이빙하는 능력이 탁월하며, 팀이 흔들릴 때 가장 안정적인 버팀목이 되어주는 소중한 존재입니다.',
+        stats: [
+          { label: '경청·포용력', val: 99, color: 'bg-pinkyAccent' },
+          { label: '지식·문서화', val: 96, color: 'bg-skyAccent' },
+          { label: '세심한 케어', val: 97, color: 'bg-lemonAccent' },
+          { label: '협업 조화도', val: 95, color: 'bg-skyDark' },
+          { label: '인내·끈기', val: 93, color: 'bg-pinkyDark' }
+        ],
+        realJobs: ['프로덕트 디자이너', '출판·콘텐츠 기획자', '유저 코디네이터', '도서관·아카이브 전문가', '심리 상담·코치'],
+        chiiJob: '📚 고서점 북 큐레이터 & 핑크 게 머리띠 컬렉터',
+        weakness: '타인의 요구를 거절하지 못해 내 할 일이 밀릴 때가 있어요. 내 소중한 독서와 휴식 시간에는 정중하게 선을 그어도 괜찮아요!',
+        bestMatch: 'momonga',
+        cautionMatch: 'usagi',
+        prescription: '향긋한 홍차 한 잔을 우려내고 좋아하는 책이나 웹툰을 정주행하며 온전히 나만을 위한 포근한 저녁 시간을 보내보세요.'
+      }
+    };
+
+    /* -----------------------------------------------------------
+     * 4. 12 SCENARIO QUESTIONS IN CHIIKAWA UNIVERSE
+     * ----------------------------------------------------------- */
+    const QUESTIONS = [
+      {
+        category: 'Q1. 아침 출근 & 노동 시작',
+        char: 'chiikawa',
+        reaction: '"드디어 오늘의 노동 시작! 어떻게 출발할까?"',
+        question: '햇살 좋은 아침, 오늘의 제초 알바 집합소에 도착했습니다! 당신의 첫 행동은?',
+        options: [
+          { text: '"안녕~! 오늘 날씨 진짜 좋다!" 주변 동료들에게 먼저 밝게 인사하며 텐션을 올린다.', axis: 'E', val: 2, charMood: 'cheer' },
+          { text: '조용히 내 장비를 점검하고 오늘 맡은 구역 지도를 살펴보며 마음의 준비를 한다.', axis: 'I', val: 2, charMood: 'happy' }
+        ]
+      },
+      {
+        category: 'Q2. 자격증 시험 준비',
+        char: 'shisa',
+        reaction: '"제초 5급 자격증 시험이 일주일 앞으로 다가왔어요!"',
+        question: '기다리던 자격증 시험이 일주일 남았습니다! 당신만의 필승 공부법은?',
+        options: [
+          { text: '기출문제집 1페이지부터 마지막 페이지까지 매일 분량을 정해 꼼꼼히 정독한다.', axis: 'S', val: 2, charMood: 'proud' },
+          { text: '"이 풀은 왜 위험할까?" 전체적인 원리와 출제 흐름을 상상하며 큰 그림부터 파악한다.', axis: 'N', val: 2, charMood: 'happy' }
+        ]
+      },
+      {
+        category: 'Q3. 동료의 실수 대처',
+        char: 'hachiware',
+        reaction: '"앗... 친구가 실수로 엉뚱한 풀을 뽑아 속상해하고 있어요!"',
+        question: '함께 일하던 동료가 실수를 해서 잔뜩 풀이 죽어 있습니다. 당신의 첫마디는?',
+        options: [
+          { text: '"많이 놀랐지? 괜찮아, 누구든 처음엔 그럴 수 있어!"라며 마음부터 토닥여 준다.', axis: 'F', val: 2, charMood: 'teary' },
+          { text: '"지금 바로 관리자님께 말씀드리고 이 구역부터 다시 정리하자!"라며 해결책을 제시한다.', axis: 'T', val: 2, charMood: 'proud' }
+        ]
+      },
+      {
+        category: 'Q4. 노동 보수 활용 계획',
+        char: 'kurimanju',
+        reaction: '"기다리던 노동 보수 봉투를 받았어요! 짤랑짤랑~ 💰"',
+        question: '열심히 일해서 두둑한 노동 보수를 받았습니다! 어떻게 관리할까요?',
+        options: [
+          { text: '비상금 저축액, 사스마타 할부금, 간식비를 항목별로 딱딱 나누어 계획표에 적는다.', axis: 'J', val: 2, charMood: 'proud' },
+          { text: '"오늘 고생했는데 일단 맛있는 라멘부터 먹자!" 기분과 상황에 맞춰 유연하게 쓴다.', axis: 'P', val: 2, charMood: 'cheer' }
+        ]
+      },
+      {
+        category: 'Q5. 라멘집 피크타임',
+        char: 'shisa',
+        reaction: '"라멘집 로우에 손님이 구름처럼 몰려왔어요! 🍜"',
+        question: '갑자기 주문이 폭발하는 피크타임! 어떤 포지션에서 가장 실력이 발휘되나요?',
+        options: [
+          { text: '홀에서 손님들과 눈을 맞추고 주문을 받으며 활기차게 현장 분위기를 이끈다.', axis: 'E', val: 2, charMood: 'cheer' },
+          { text: '주방 안쪽에서 흔들림 없이 면 삶기와 육수 온도에만 묵묵히 집중해 완벽한 맛을 낸다.', axis: 'I', val: 2, charMood: 'proud' }
+        ]
+      },
+      {
+        category: 'Q6. 미지의 토벌 작전',
+        char: 'usagi',
+        reaction: '"우라?! 숲속에서 처음 보는 신기한 열매와 길을 발견했어요!"',
+        question: '토벌 도중 지도에 없는 신비한 갈림길과 거대 푸딩 바위를 발견했습니다!',
+        options: [
+          { text: '"우라~!" 저 너머에 어떤 엄청난 보물이 있을지 직감을 믿고 모험을 시도해 본다.', axis: 'N', val: 2, charMood: 'cheer' },
+          { text: '안전이 최우선! 현재 위치와 발자국을 기록하고 검증된 매뉴얼 경로를 유지한다.', axis: 'S', val: 2, charMood: 'happy' }
+        ]
+      },
+      {
+        category: 'Q7. 위기 상황 리더십',
+        char: 'rakko',
+        reaction: '"거대 키메라가 나타났습니다! 팀을 어떻게 이끌까요?"',
+        question: '예상치 못한 난관이 닥쳤을 때, 당신이 더 신뢰하는 문제 해결 방식은?',
+        options: [
+          { text: '냉철하게 상대의 약점과 우리의 전력을 분석해 가장 승률이 높은 전술을 지시한다.', axis: 'T', val: 2, charMood: 'proud' },
+          { text: '겁먹은 팀원들의 사기를 북돋우고 서로 믿고 의지할 수 있는 팀워크부터 다진다.', axis: 'F', val: 2, charMood: 'cheer' }
+        ]
+      },
+      {
+        category: 'Q8. 새로운 프로젝트 마감',
+        char: 'kani',
+        reaction: '"다음 주까지 특별 노동 보고서를 제출해야 해요!"',
+        question: '중요한 프로젝트를 진행할 때 당신의 작업 타임라인은 어떤 모습인가요?',
+        options: [
+          { text: '일차별 체크리스트를 만들어 마감 이틀 전에는 초안을 완성해 두고 여유롭게 검토한다.', axis: 'J', val: 2, charMood: 'proud' },
+          { text: '다양한 아이디어를 자유롭게 탐색하다가 마감 직전의 초집중 에너지로 단숨에 몰아친다.', axis: 'P', val: 2, charMood: 'cheer' }
+        ]
+      },
+      {
+        category: 'Q9. 퇴근 후 에너지 충전',
+        char: 'momonga',
+        reaction: '"오늘 노동 끝~! 이제 자유 시간이에요!"',
+        question: '일주일간의 고된 노동을 마친 금요일 저녁, 최고의 에너지 충전법은?',
+        options: [
+          { text: '친구들과 왁자지껄하게 모여 맛있는 음식을 나눠 먹고 수다를 떨며 스트레스를 푼다.', axis: 'E', val: 2, charMood: 'cheer' },
+          { text: '포근한 이불 속에서 좋아하는 간식을 까먹으며 혼자만의 고요한 휴식을 만끽한다.', axis: 'I', val: 2, charMood: 'happy' }
+        ]
+      },
+      {
+        category: 'Q10. 새로운 업무 툴 도입',
+        char: 'hachiware',
+        reaction: '"신형 사스마타와 최신 업무 도구가 지급되었어요!"',
+        question: '새로운 업무 도구나 기획안을 접했을 때 당신의 머릿속에 먼저 떠오르는 생각은?',
+        options: [
+          { text: '"이걸 응용하면 완전히 새로운 방식의 이벤트도 할 수 있겠는데?"라며 가능성을 확장한다.', axis: 'N', val: 2, charMood: 'cheer' },
+          { text: '"기존 도구보다 무게는 얼마나 가벼워졌고 사용법은 어떻게 다르지?"라며 실용성을 따진다.', axis: 'S', val: 2, charMood: 'proud' }
+        ]
+      },
+      {
+        category: 'Q11. 피드백 주고받기',
+        char: 'rakko',
+        reaction: '"후배가 열심히 만든 결과물을 가져와 의견을 물어보네요!"',
+        question: '동료나 후배의 결과물을 피드백해 줄 때 당신이 더 중요하게 생각하는 포인트는?',
+        options: [
+          { text: '그동안 들인 노력과 고생을 먼저 충분히 칭찬해 주고 따뜻한 격려를 담아 이야기한다.', axis: 'F', val: 2, charMood: 'happy' },
+          { text: '더 완벽한 결과물이 될 수 있도록 보완해야 할 핵심 팩트와 개선점을 명확히 짚어준다.', axis: 'T', val: 2, charMood: 'proud' }
+        ]
+      },
+      {
+        category: 'Q12. 휴일 피크닉 스타일',
+        char: 'usagi',
+        reaction: '"마지막 질문! 기다리던 꿀 같은 휴일 피크닉 날이에요 🌸"',
+        question: '치이카와 친구들과 봄소풍을 떠나기로 한 날! 당신의 준비 스타일은?',
+        options: [
+          { text: '도시락 메뉴, 돗자리 위치, 우천 시 대비 코스까지 알차게 동선을 짜서 출발한다.', axis: 'J', val: 2, charMood: 'proud' },
+          { text: '"발길 닿는 곳이 곧 명소지!" 맛있는 간식만 챙겨서 바람 부는 대로 즉흥 산책을 즐긴다.', axis: 'P', val: 2, charMood: 'cheer' }
+        ]
+      }
+    ];
+
+    /* -----------------------------------------------------------
+     * 5. STATE MANAGEMENT & QUIZ FLOW
+     * ----------------------------------------------------------- */
+    let currentStep = 0;
+    let answersHistory = []; // Stores { axis, val } for each step so Back button works seamlessly
+    let userPoints = 100;
+    let patCount = 0;
+    let weedCount = 0;
+    let activePetChar = 'chiikawa';
+    let unlockedItems = [];
+    let currentResultKey = 'chiikawa';
+
+    function updatePointsUI() {
+      document.getElementById('header-points').textContent = `${userPoints} P`;
+      document.getElementById('care-points-display').textContent = `${userPoints} P`;
+    }
+
+    function addPoints(amount, reasonText) {
+      userPoints += amount;
+      updatePointsUI();
+      if (reasonText) {
+        showToast(`${reasonText} (+${amount}P)`, '💰');
+      }
+    }
+
+    function switchMode(mode) {
+      playSound('pop');
+      const careerSec = document.getElementById('section-career');
+      const careSec = document.getElementById('section-care');
+      const navCareer = document.getElementById('nav-career');
+      const navCare = document.getElementById('nav-care');
+
+      if (mode === 'home') {
+        careerSec.classList.remove('hidden');
+        careSec.classList.add('hidden');
+        document.getElementById('career-intro').classList.remove('hidden');
+        document.getElementById('career-quiz').classList.add('hidden');
+        document.getElementById('career-result').classList.add('hidden');
+        navCareer.className = 'px-3 py-1 rounded-full text-xs sm:text-sm font-cute transition-all bg-pinky text-choco border border-choco';
+        navCare.className = 'px-3 py-1 rounded-full text-xs sm:text-sm font-cute transition-all text-choco hover:bg-lemon/50';
+      } else if (mode === 'career') {
+        careerSec.classList.remove('hidden');
+        careSec.classList.add('hidden');
+        navCareer.className = 'px-3 py-1 rounded-full text-xs sm:text-sm font-cute transition-all bg-pinky text-choco border border-choco';
+        navCare.className = 'px-3 py-1 rounded-full text-xs sm:text-sm font-cute transition-all text-choco hover:bg-lemon/50';
+      } else if (mode === 'care') {
+        careerSec.classList.add('hidden');
+        careSec.classList.remove('hidden');
+        navCare.className = 'px-3 py-1 rounded-full text-xs sm:text-sm font-cute transition-all bg-lemon text-choco border border-choco';
+        navCareer.className = 'px-3 py-1 rounded-full text-xs sm:text-sm font-cute transition-all text-choco hover:bg-pinky/50';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function pokeHeroCharacter(charId, event) {
+      playSound('sparkle');
+      const quotes = {
+        chiikawa: '"응! 으응~!! 오늘도 함께 제초 알바 힘내요! 🌸"',
+        hachiware: '"하하! 테스트 해보면 진짜 재밌을 거야! 어떻게든 될 거야~ 💙"',
+        usagi: '"우라!! 야하~!! 하아아~?!! ⚡ (엄청 반갑다는 뜻)"'
+      };
+      document.getElementById('intro-speech').textContent = quotes[charId];
+      spawnFloatingParticles(event.clientX, event.clientY, ['💖', '✨', '🌸', '⭐']);
+    }
+
+    function startQuiz() {
+      playSound('sparkle');
+      currentStep = 0;
+      answersHistory = [];
+      document.getElementById('career-intro').classList.add('hidden');
+      document.getElementById('career-result').classList.add('hidden');
+      document.getElementById('career-quiz').classList.remove('hidden');
+      renderQuestion();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderQuestion() {
+      const q = QUESTIONS[currentStep];
+      const total = QUESTIONS.length;
+      const pct = Math.round(((currentStep + 1) / total) * 100);
+
+      document.getElementById('quiz-category-badge').textContent = q.category;
+      document.getElementById('quiz-step-text').textContent = `${currentStep + 1} / ${total}`;
+      document.getElementById('quiz-progress-fill').style.width = `${pct}%`;
+
+      const walker = document.getElementById('quiz-walker');
+      const walkerEmojis = ['🐹', '🐱', '🐰', '🍜', '⚔️', '🍵', '🍑', '🦀'];
+      walker.textContent = walkerEmojis[currentStep % walkerEmojis.length];
+      walker.style.left = `calc(${Math.min(92, Math.max(6, pct))}% - 14px)`;
+
+      // Back button text
+      const prevBtn = document.getElementById('btn-prev-q');
+      prevBtn.innerHTML = currentStep === 0 ? '<span>🏠 처음으로</span>' : '<span>⬅️ 이전 질문으로</span>';
+
+      // Render stage character & text
+      document.getElementById('quiz-stage-svg').innerHTML = getCharacterSVG(q.char, 'happy');
+      document.getElementById('quiz-reaction-bubble').textContent = q.reaction;
+      document.getElementById('quiz-question-title').textContent = q.question;
+
+      // Render options
+      const optionsContainer = document.getElementById('quiz-options');
+      optionsContainer.innerHTML = '';
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn w-full p-4 sm:p-5 text-left flex items-center gap-3.5 group';
+        btn.innerHTML = `
+          <div class="w-9 h-9 rounded-full bg-lemon border-2 border-choco flex items-center justify-center font-cute text-sm flex-shrink-0 group-hover:bg-pinkyAccent group-hover:text-white transition-colors">
+            ${idx === 0 ? 'A' : 'B'}
+          </div>
+          <span class="text-sm sm:text-base font-bold text-choco leading-snug flex-1">${opt.text}</span>
+          <span class="text-lg opacity-0 group-hover:opacity-100 transition-opacity">🐾</span>
+        `;
+
+        // Hover changes character expression dynamically
+        btn.addEventListener('mouseenter', () => {
+          document.getElementById('quiz-stage-svg').innerHTML = getCharacterSVG(q.char, opt.charMood);
+        });
+
+        btn.addEventListener('click', (e) => {
+          selectOption(opt, e);
+        });
+
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function selectOption(opt, event) {
+      playSound('pop');
+      if (event && event.clientX) {
+        spawnFloatingParticles(event.clientX, event.clientY, ['✨', '🐾', '🌸']);
+      }
+      answersHistory[currentStep] = { axis: opt.axis, val: opt.val };
+
+      if (currentStep < QUESTIONS.length - 1) {
+        currentStep++;
+        renderQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    function prevQuestion() {
+      playSound('pop');
+      if (currentStep > 0) {
+        currentStep--;
+        renderQuestion();
+      } else {
+        document.getElementById('career-quiz').classList.add('hidden');
+        document.getElementById('career-intro').classList.remove('hidden');
+      }
+    }
+
+    function finishQuiz() {
+      playSound('fanfare');
+      const scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+      answersHistory.forEach((ans) => {
+        if (ans && scores[ans.axis] !== undefined) {
+          scores[ans.axis] += ans.val;
+        }
+      });
+
+      const isE = scores.E >= scores.I;
+      const isS = scores.S >= scores.N;
+      const isT = scores.T > scores.F;
+      const isJ = scores.J >= scores.P;
+
+      // Map 4 axes to our 8 distinct Chiikawa Career Personas
+      let personaKey = 'chiikawa';
+      if (!isE && !isT && !isJ) personaKey = 'chiikawa';
+      else if (isE && !isT && isJ) personaKey = 'hachiware';
+      else if (isE && !isS && !isJ) personaKey = 'usagi';
+      else if (isS && isT && isJ) personaKey = 'shisa';
+      else if (isE && isT && isJ) personaKey = 'rakko';
+      else if (!isE && isT && !isJ) personaKey = 'kurimanju';
+      else if (isE && !isT && !isJ) personaKey = 'momonga';
+      else if (!isE && !isT && isJ) personaKey = 'kani';
+      else {
+        // Fallback fine-tuned mapping
+        if (isE && isT) personaKey = 'rakko';
+        else if (!isE && isT) personaKey = 'kurimanju';
+        else if (isE && !isT) personaKey = 'hachiware';
+        else personaKey = 'chiikawa';
+      }
+
+      addPoints(50, '적성 테스트 완료 보수 지급!');
+      displayResult(personaKey);
+    }
+
+    function displayResult(personaKey) {
+      currentResultKey = personaKey;
+      const p = PERSONAS[personaKey] || PERSONAS.chiikawa;
+
+      document.getElementById('career-intro').classList.add('hidden');
+      document.getElementById('career-quiz').classList.add('hidden');
+      document.getElementById('career-result').classList.remove('hidden');
+
+      document.getElementById('result-badge-code').textContent = p.badge;
+      document.getElementById('result-title').textContent = p.name;
+      document.getElementById('result-subtitle').textContent = p.subtitle;
+      document.getElementById('result-character-svg').innerHTML = getCharacterSVG(p.id, 'cheer');
+      document.getElementById('result-quote').textContent = p.quote;
+      document.getElementById('result-desc').textContent = p.desc;
+
+      // Render 5 Stats
+      const statsEl = document.getElementById('result-stats');
+      statsEl.innerHTML = p.stats.map(st => `
+        <div>
+          <div class="flex justify-between text-xs font-cute mb-1">
+            <span>${st.label}</span>
+            <span class="text-pinkyAccent">${st.val}%</span>
+          </div>
+          <div class="h-3 bg-cream border border-choco rounded-full overflow-hidden p-0.5">
+            <div class="h-full ${st.color} rounded-full transition-all duration-700" style="width: ${st.val}%"></div>
+          </div>
+        </div>
+      `).join('');
+
+      // Real Jobs
+      document.getElementById('result-real-jobs').innerHTML = p.realJobs.map(job => `
+        <span class="bg-white border border-choco px-3 py-1 rounded-full text-xs font-cute text-choco shadow-sm">
+          #${job}
+        </span>
+      `).join('');
+
+      document.getElementById('result-chii-job').textContent = p.chiiJob;
+      document.getElementById('result-weakness').textContent = p.weakness;
+      document.getElementById('result-prescription').textContent = p.prescription;
+
+      // Best & Caution Matches
+      const bestP = PERSONAS[p.bestMatch];
+      const cautionP = PERSONAS[p.cautionMatch];
+
+      const bestEl = document.getElementById('result-best-match');
+      bestEl.onclick = () => { playSound('pop'); displayResult(bestP.id); };
+      bestEl.innerHTML = `
+        <div class="w-16 h-16 flex-shrink-0">${getCharacterSVG(bestP.id, 'happy')}</div>
+        <div>
+          <div class="text-xs font-cute text-pinkyAccent">💖 환상의 업무 시너지 파트너</div>
+          <div class="font-cute text-base text-choco">${bestP.name}</div>
+          <div class="text-xs text-chocoLight mt-0.5">클릭해서 이 동료의 성향도 확인해 보세요!</div>
+        </div>
+      `;
+
+      const cautionEl = document.getElementById('result-caution-match');
+      cautionEl.onclick = () => { playSound('pop'); displayResult(cautionP.id); };
+      cautionEl.innerHTML = `
+        <div class="w-16 h-16 flex-shrink-0">${getCharacterSVG(cautionP.id, 'happy')}</div>
+        <div>
+          <div class="text-xs font-cute text-lemonAccent">⚡ 서로 배려가 필요한 보완 파트너</div>
+          <div class="font-cute text-base text-choco">${cautionP.name}</div>
+          <div class="text-xs text-chocoLight mt-0.5">클릭해서 서로 다른 매력을 알아보세요!</div>
+        </div>
+      `;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function restartQuiz() {
+      playSound('pop');
+      startQuiz();
+    }
+
+    function celebrateCharacter(event) {
+      playSound('sparkle');
+      spawnFloatingParticles(event.clientX, event.clientY, ['🎉', '🌸', '💖', '⭐', '🍭']);
+      showToast('오늘도 당신의 반짝이는 커리어를 응원해요!', '🎉');
+    }
+
+    function copyResultSummary() {
+      playSound('sparkle');
+      const p = PERSONAS[currentResultKey];
+      const shareText = `[🌱 치이카와 커리어 & 케어 센터 진단 결과]\n✨ 나의 유형: ${p.name} (${p.badge})\n💬 한줄 요약: ${p.subtitle}\n💼 추천 직무: ${p.realJobs.join(', ')}\n🪪 치이카와 세계관 알바: ${p.chiiJob}\n🍵 힐링 처방: ${p.prescription}`;
+
+      const tempInput = document.createElement('textarea');
+      tempInput.value = shareText;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      showToast('결과 요약이 클립보드에 복사되었어요! 친구에게 공유해 보세요 💕', '📋');
+    }
+
+    /* -----------------------------------------------------------
+     * 6. MODE 2: DAILY CARE & HEALING LOUNGE INTERACTIONS
+     * ----------------------------------------------------------- */
+    const MOOD_PRESCRIPTIONS = {
+      burnout: {
+        char: 'chiikawa',
+        mood: 'teary',
+        name: '치이카와의 토닥토닥 응원',
+        msg: '"응... 오늘 정말 많이 지쳤구나. 울고 싶을 땐 잠깐 울어도 괜찮아! 내가 옆에서 같이 있어 줄게 🌸"',
+        routine: '💡 추천 루틴: 스마트폰을 잠시 뒤집어 두고 눈을 감은 채 느리게 5번 심호흡해 보세요. 오늘은 무조건 일찍 쉬는 날!'
+      },
+      anxious: {
+        char: 'hachiware',
+        mood: 'cheer',
+        name: '하치와레의 긍정 마법',
+        msg: '"걱정 마! 지금까지 준비한 것만으로도 충분히 멋져. 어떻게든 될 거야~! 진짜루!"',
+        routine: '💡 추천 루틴: 가장 쉬운 할 일 딱 1개만 먼저 체크해 보세요. 시작하면 불안의 80%가 사라진답니다!'
+      },
+      sleepy: {
+        char: 'kurimanju',
+        mood: 'happy',
+        name: '쿠리만쥬 선배의 여유 처방',
+        msg: '"...캬하~ 🍵 무리해서 달리기만 하면 금방 지치는 법! 향긋한 차 한 모금 마시며 쉬어가자고."',
+        routine: '💡 추천 루틴: 자리에서 일어나 기지개를 쭉 펴고 창밖 먼 곳을 30초간 바라보며 눈의 피로를 풀어주세요.'
+      },
+      proud: {
+        char: 'usagi',
+        mood: 'cheer',
+        name: '우사기의 하이텐션 부스터',
+        msg: '"우라!! 야하~!! 풀파워 에너지 최고야!! 오늘 하려는 일 전부 단숨에 해치워 버리자고! ⚡"',
+        routine: '💡 추천 루틴: 이 기세를 몰아 평소 미뤄두었던 가장 중요한 핵심 과제를 25분 타이머로 돌파해 보세요!'
+      },
+      hungry: {
+        char: 'shisa',
+        mood: 'cheer',
+        name: '시사의 든든한 미식 추천',
+        msg: '"열심히 일한 자, 맛있게 드세요~! 마늘 듬뿍 넣은 따뜻한 라멘 한 그릇이면 기운이 펄펄 날 거예요! 🍜"',
+        routine: '💡 추천 루틴: 오늘 식사는 절대 대충 때우지 마세요! 내가 가장 좋아하는 메뉴로 든든하게 보상을 챙겨주세요.'
+      }
+    };
+
+    function selectMood(moodKey, event) {
+      playSound('sparkle');
+      const data = MOOD_PRESCRIPTIONS[moodKey];
+      document.getElementById('mood-svg').innerHTML = getCharacterSVG(data.char, data.mood);
+      document.getElementById('mood-char-name').textContent = data.name;
+      document.getElementById('mood-message').textContent = data.msg;
+      document.getElementById('mood-routine').textContent = data.routine;
+
+      if (event && event.clientX) {
+        spawnFloatingParticles(event.clientX, event.clientY, ['💖', '🍵', '✨']);
+      }
+      addPoints(5, '감정 체크인 완료');
+    }
+
+    function setPetChar(charId) {
+      playSound('pop');
+      activePetChar = charId;
+      ['chiikawa', 'hachiware', 'usagi', 'kurimanju', 'momonga'].forEach(id => {
+        const tab = document.getElementById(`pet-tab-${id}`);
+        if (id === charId) {
+          tab.className = 'px-2.5 py-1 rounded-full text-xs font-cute border border-choco bg-pinky shadow-sm';
+        } else {
+          tab.className = 'px-2.5 py-1 rounded-full text-xs font-cute border border-choco bg-white';
+        }
+      });
+      document.getElementById('pet-stage-svg').innerHTML = getCharacterSVG(charId, 'happy');
+      document.getElementById('pet-speech').textContent = `"${PERSONAS[charId].name.split(' ').pop()}, 대기 완료! 머리를 쓰담쓰담 해주세요 💕"`;
+    }
+
+    function patActiveChar(event) {
+      playSound('pop');
+      patCount++;
+      userPoints += 5;
+      updatePointsUI();
+      document.getElementById('pat-count').textContent = patCount;
+
+      const lines = {
+        chiikawa: ['"에헤헤... 따뜻해요 🌸"', '"응!! 오늘도 힘낼게요!"', '"쓰담쓰담 기분 최고예요 💕"'],
+        hachiware: ['"우와~ 기분 좋아! 고마워 💙"', '"어떻게든 다 잘 될 거야~!"', '"고르르릉... (기분 좋은 소리)"'],
+        usagi: ['"우라!! 야하~!! ⚡"', '"푸루루루~!! 하아?!"', '"야하~!! (신나서 점프!)"'],
+        kurimanju: ['"...캬하~! 좋구먼 🍵"', '"자네도 오늘 고생 많았어~"', '"안주 하나 더 꺼내야겠어~"'],
+        momonga: ['"더! 더 귀여워해 봐라! 💖"', '"흥, 꽤 쓸만한 손길이군!"', '"칭찬도 같이 해봐라!"']
+      };
+
+      const charLines = lines[activePetChar] || lines.chiikawa;
+      const randomLine = charLines[Math.floor(Math.random() * charLines.length)];
+      document.getElementById('pet-speech').textContent = randomLine;
+      document.getElementById('pet-stage-svg').innerHTML = getCharacterSVG(activePetChar, 'cheer');
+
+      if (event && event.clientX) {
+        spawnFloatingParticles(event.clientX, event.clientY, ['💖', '🌸', '✨', '+5P']);
+      }
+    }
+
+    function buyDeskItem(itemKey, itemLabel, cost) {
+      if (unlockedItems.includes(itemKey)) {
+        showToast('이미 책상에 놓여 있는 아이템이에요!', '🎁');
+        return;
+      }
+      if (userPoints < cost) {
+        playSound('pop');
+        showToast(`포인트가 부족해요! 쓰담쓰담이나 제초 알바로 ${cost - userPoints}P를 더 모아보세요!`, '🌱');
+        return;
+      }
+
+      userPoints -= cost;
+      unlockedItems.push(itemKey);
+      updatePointsUI();
+      playSound('fanfare');
+
+      const btn = document.getElementById(`shop-${itemKey}`);
+      btn.classList.add('opacity-60');
+      btn.innerHTML = `<span>${itemLabel}</span><span class="bg-pinky border border-choco px-1.5 rounded-full">보유중</span>`;
+
+      renderDeskTray();
+      showToast(`${itemLabel} 아이템을 선물했어요! 캐릭터가 행복해해요 💕`, '🎉');
+    }
+
+    function renderDeskTray() {
+      const tray = document.getElementById('desk-items-tray');
+      const icons = {
+        ramen: '🍜 김이 모락모락 차루메라',
+        dango: '🍡 달콤 쫀득 삼색 당고',
+        cert: '🪪 반짝이는 제초 5급 자격증',
+        sasumata: '🔱 든든한 핑크 사스마타'
+      };
+      tray.innerHTML = unlockedItems.map(k => `
+        <span class="bg-white border border-choco px-2.5 py-1 rounded-full text-xs font-cute shadow-sm anim-bounce">
+          ${icons[k]}
+        </span>
+      `).join('');
+    }
+
+    /* Mini Weeding Field */
+    function spawnWeeds(playEffect = false) {
+      if (playEffect) playSound('pop');
+      const field = document.getElementById('weeding-field');
+      field.innerHTML = '';
+
+      const weedTypes = [
+        { emoji: '🌱', label: '보통 잡초', pts: 10 },
+        { emoji: '🌿', label: '무성한 풀', pts: 15 },
+        { emoji: '☘️', label: '행운의 클로버', pts: 20 },
+        { emoji: '🌼', label: '민들레 잡초', pts: 10 },
+        { emoji: '🌵', label: '위험한 가시풀!', pts: 25 }
+      ];
+
+      for (let i = 0; i < 6; i++) {
+        const w = weedTypes[Math.floor(Math.random() * weedTypes.length)];
+        const btn = document.createElement('button');
+        btn.className = 'kawaii-btn bg-white hover:bg-lemon w-full py-3 rounded-2xl flex flex-col items-center justify-center gap-0.5 group';
+        btn.innerHTML = `
+          <span class="text-2xl group-hover:scale-125 transition-transform">${w.emoji}</span>
+          <span class="text-[11px] font-cute text-choco">${w.label}</span>
+        `;
+        btn.onclick = (e) => {
+          playSound('sparkle');
+          weedCount++;
+          userPoints += w.pts;
+          updatePointsUI();
+          document.getElementById('weed-count').textContent = weedCount;
+          spawnFloatingParticles(e.clientX, e.clientY, ['🌱', '✨', `+${w.pts}P`]);
+          btn.disabled = true;
+          btn.className = 'bg-white/50 border-2 border-dashed border-choco/30 w-full py-3 rounded-2xl flex flex-col items-center justify-center opacity-50';
+          btn.innerHTML = `<span class="text-xl">✨</span><span class="text-[10px] font-cute">제초 완료!</span>`;
+
+          // Auto respawn if all pulled
+          const remaining = field.querySelectorAll('button:not([disabled])');
+          if (remaining.length === 0) {
+            setTimeout(() => {
+              showToast('풀밭 한 구역을 완벽히 제초했어요! 보너스 +20P!', '🎉');
+              userPoints += 20;
+              updatePointsUI();
+              spawnWeeds(false);
+            }, 500);
+          }
+        };
+        field.appendChild(btn);
+      }
+    }
+
+    /* Daily Career Fortune Cookie */
+    const FORTUNES = [
+      {
+        title: '🌟 대길(大吉)! 하치와레의 긍정 운세가 찾아왔어요!',
+        detail: '막혀 있던 업무나 고민이 동료의 한마디로 술술 풀리는 날입니다. 행운의 아이템: 시원한 보리차 & 파란색 볼펜'
+      },
+      {
+        title: '⚡ 우사기의 초고속 퇴근 운세가 반짝여요!',
+        detail: '오전 집중력이 평소보다 200% 상승합니다! 중요한 일은 점심 전에 해치우면 저녁이 여유로워져요. 행운의 아이템: 레몬 사탕'
+      },
+      {
+        title: '🌸 치이카와의 제초 합격 행운이 함께해요!',
+        detail: '작고 꼼꼼하게 챙긴 디테일이 큰 칭찬으로 돌아오는 날이에요. 행운의 아이템: 딸기우유 & 귀여운 포스트잇'
+      },
+      {
+        title: '🍵 쿠리만쥬 선배의 여유만만 힐링 운세!',
+        detail: '조급해하지 말고 내 페이스를 유지할수록 결과물이 좋아집니다. 행운의 아이템: 따뜻한 드립 커피 & 견과류'
+      },
+      {
+        title: '⚔️ 랏코 선배의 든든한 귀인 운세!',
+        detail: '혼자 고민하던 문제를 도와줄 든든한 선배나 조력자가 나타납니다. 행운의 아이템: 초콜릿 파르페'
+      }
+    ];
+
+    function crackFortune(event) {
+      playSound('fanfare');
+      const f = FORTUNES[Math.floor(Math.random() * FORTUNES.length)];
+      document.getElementById('fortune-icon').textContent = '✨📜✨';
+      document.getElementById('fortune-title').textContent = f.title;
+      const detailEl = document.getElementById('fortune-detail');
+      detailEl.textContent = f.detail;
+      detailEl.classList.remove('hidden');
+
+      if (event && event.clientX) {
+        spawnFloatingParticles(event.clientX, event.clientY, ['🥠', '✨', '🍀']);
+      }
+    }
+
+    /* -----------------------------------------------------------
+     * 7. ENCYCLOPEDIA MODAL & FLOATING PARTICLES
+     * ----------------------------------------------------------- */
+    function openDexModal() {
+      playSound('pop');
+      const modal = document.getElementById('dex-modal');
+      const grid = document.getElementById('dex-grid');
+      grid.innerHTML = '';
+
+      Object.values(PERSONAS).forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'kawaii-card-soft p-4 flex items-center gap-3.5 cursor-pointer hover:bg-pinky/25';
+        card.onclick = () => {
+          closeDexModal();
+          switchMode('career');
+          displayResult(p.id);
+        };
+        card.innerHTML = `
+          <div class="w-20 h-20 flex-shrink-0 anim-bounce">${getCharacterSVG(p.id, 'happy')}</div>
+          <div class="flex-1 min-w-0">
+            <span class="inline-block bg-lemon border border-choco px-2 py-0.5 rounded-full text-[10px] font-cute mb-1">${p.badge}</span>
+            <h4 class="font-cute text-base text-choco truncate">${p.name}</h4>
+            <p class="text-xs text-chocoLight line-clamp-2 mt-0.5">${p.subtitle}</p>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeDexModal() {
+      playSound('pop');
+      document.getElementById('dex-modal').classList.add('hidden');
+    }
+
+    function spawnFloatingParticles(x, y, symbols) {
+      for (let i = 0; i < 4; i++) {
+        const el = document.createElement('div');
+        el.className = 'floating-particle font-cute text-lg select-none';
+        el.textContent = symbols[i % symbols.length];
+        const offsetX = (Math.random() - 0.5) * 50;
+        const offsetY = (Math.random() - 0.5) * 20;
+        el.style.left = `${x + offsetX}px`;
+        el.style.top = `${y + offsetY}px`;
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1000);
+      }
+    }
+
+    let toastTimer = null;
+    function showToast(message, icon = '✨') {
+      const box = document.getElementById('toast-box');
+      document.getElementById('toast-icon').textContent = icon;
+      document.getElementById('toast-text').textContent = message;
+      box.classList.remove('opacity-0', 'translate-y-4');
+      box.classList.add('opacity-100', 'translate-y-0');
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        box.classList.add('opacity-0', 'translate-y-4');
+        box.classList.remove('opacity-100', 'translate-y-0');
+      }, 2800);
+    }
+
+    /* -----------------------------------------------------------
+     * 8. INITIALIZATION ON WINDOW LOAD
+     * ----------------------------------------------------------- */
+    window.onload = function () {
+      // Render Hero Trio SVGs
+      document.getElementById('hero-svg-chiikawa').innerHTML = getCharacterSVG('chiikawa', 'happy');
+      document.getElementById('hero-svg-hachiware').innerHTML = getCharacterSVG('hachiware', 'cheer');
+      document.getElementById('hero-svg-usagi').innerHTML = getCharacterSVG('usagi', 'cheer');
+
+      // Render Care Lounge Default SVGs
+      document.getElementById('mood-svg').innerHTML = getCharacterSVG('hachiware', 'happy');
+      document.getElementById('pet-stage-svg').innerHTML = getCharacterSVG('chiikawa', 'happy');
+
+      // Initialize Weeding Field
+      spawnWeeds(false);
+    };
+  </script>
+</body>
+</html>
